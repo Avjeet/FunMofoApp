@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_about"
+            android:title="About us" />
+        <item
+            android:id="@+id/top"
+            android:icon="@drawable/ic_top"
+            android:title="Top Products" />
+        <item
+            android:id="@+id/New"
+            android:icon="@drawable/ic_new"
+            android:title="New Collections" />
+
+        <item
+            android:id="@+id/wishlist2"
+            android:icon="@drawable/ic_wishlist2"
+            android:title="My Wishlist" />
+        <item
+            android:id="@+id/cart2"
+            android:icon="@drawable/ic_cart2"
+            android:title="My Cart" />
+
+        <item
+            android:id="@+id/orders"
+            android:icon="@drawable/ic_orders"
+            android:title="My Orders" />
+
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/ic_contact"
+            android:title="Contact us" />
+    </group>
+
+    <item android:title="Settings">
+
+        <menu>
+            <item
+                android:id="@+id/account"
+                android:icon="@drawable/ic_account"
+                android:title="My Account" />
+
+            <item
+                android:id="@+id/password"
+                android:icon="@drawable/ic_password"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Log out" />
+        </menu>
+    </item>
+
+</menu>
