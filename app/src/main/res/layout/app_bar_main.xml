@@ -22,6 +22,13 @@
 
     <include layout="@layout/content_main" />
 
+    <FrameLayout
+        android:layout_marginTop="59dp"
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

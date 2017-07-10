@@ -17,6 +17,11 @@
         <item name="android:background">@drawable/rounded_border</item>
     </style>
 
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/green</item>
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
     <!--<style name="DialogAnimation" >
         <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
         <item name="android:windowExitAnimation">@anim/slide_out_down</item>

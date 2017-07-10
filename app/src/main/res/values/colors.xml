@@ -10,4 +10,6 @@
     <color name="white">#fff</color>
     <color name="grey">#5e5c5c</color>
     <color name="dialog_bg">#90000000</color>
+    <color name="red">#ff3300</color>
+    <color name="green">#15d615</color>
 </resources>

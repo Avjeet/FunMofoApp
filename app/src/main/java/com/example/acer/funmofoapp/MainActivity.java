@@ -1,9 +1,12 @@
 package com.example.acer.funmofoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -83,42 +86,48 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        FragmentManager mgr=getSupportFragmentManager();
+        FragmentTransaction trans=mgr.beginTransaction();
+
         if (id == R.id.home) {
-
-
 
         } else if (id == R.id.about) {
 
         } else if (id == R.id.top) {
 
-
-
         } else if (id == R.id.New) {
 
-
-
         } else if (id == R.id.wishlist2) {
-
+            trans.replace(R.id.fragment,new WishlistFragment());
+            trans.commit();
 
         } else if (id == R.id.cart2) {
-
+            trans.replace(R.id.fragment,new CartFragment());
+            trans.commit();
 
         } else if(id == R.id.orders){
-
+            Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();
 
         } else if(id == R.id.contact_us){
 
         } else if(id == R.id.account){
-
+            Intent i1=new Intent(MainActivity.this,MyAccountActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();
 
         } else if(id == R.id.password){
-
+            Intent i1=new Intent(MainActivity.this,ChangePasswordActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();
 
         } else if(id == R.id.logout){
 
         }
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
