@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="img_id">
+        <item name="banner1">@drawable/banner1</item>
+        <item name="banner2">@drawable/banner2</item>
+        <item name="banner3">@drawable/banner3</item>
+        <item name="banner4">@drawable/banner4</item>
+    </integer-array>
+
+</resources>

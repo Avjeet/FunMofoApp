@@ -11,11 +11,16 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SignUpActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
         <activity
             android:name=".ChangePasswordActivity"
             android:screenOrientation="portrait" />
@@ -28,9 +33,9 @@
         <activity
             android:name=".OtpActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".PreviewActivity">
+        <activity android:name=".SignInActivity">
+           </activity>
 
-        </activity>
         <activity android:name=".OrderDetails">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
