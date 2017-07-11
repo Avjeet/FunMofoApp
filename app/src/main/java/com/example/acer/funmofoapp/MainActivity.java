@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        FragmentManager mgr=getSupportFragmentManager();
-        FragmentTransaction trans=mgr.beginTransaction();
+//        FragmentManager mgr=getSupportFragmentManager();
+//        FragmentTransaction trans=mgr.beginTransaction();
 
         if (id == R.id.home) {
 
@@ -98,12 +98,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.New) {
 
         } else if (id == R.id.wishlist2) {
-            trans.replace(R.id.fragment,new WishlistFragment());
-            trans.commit();
+//            trans.replace(R.id.fragment,new WishlistFragment());
+//            trans.commit();
 
         } else if (id == R.id.cart2) {
-            trans.replace(R.id.fragment,new CartFragment());
-            trans.commit();
+//            trans.replace(R.id.fragment,new CartFragment());
+//            trans.commit();
 
         } else if(id == R.id.orders){
             Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
