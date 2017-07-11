@@ -52,10 +52,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        FragmentManager mgr=getSupportFragmentManager();
-        FragmentTransaction trans=mgr.beginTransaction();
-        trans.replace(R.id.fragment,new HomeFragment());
-        trans.commit();
+
 
 
     }
