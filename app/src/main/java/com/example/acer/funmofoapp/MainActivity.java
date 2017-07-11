@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        FragmentManager mgr=getSupportFragmentManager();
+        FragmentTransaction trans=mgr.beginTransaction();
+        trans.replace(R.id.fragment,new HomeFragment());
+        trans.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
