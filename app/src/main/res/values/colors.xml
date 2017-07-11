@@ -12,9 +12,9 @@
     <color name="grey_light">#E0E0E0</color>
     <color name="grey_dark">#9E9E9E</color>
     <color name="dialog_bg">#90000000</color>
-
+    <color name="red">#ff3300</color>
+    <color name="green">#15d615</color>
     <color name="cyan">#0277BD</color>
     <color name="grey_vlight">#EEEEEE</color>
     <color name="orange_yellow">#FFEAB33D</color>
-
 </resources>
