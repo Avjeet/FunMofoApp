@@ -1,8 +1,8 @@
 package com.example.acer.funmofoapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -48,6 +48,15 @@ public class SignUpActivity extends AppCompatActivity {
                     btnsignup.setEnabled(true);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i1=new Intent(SignUpActivity.this,SignInActivity.class);
+        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i1);
+        finish();
     }
 
 }

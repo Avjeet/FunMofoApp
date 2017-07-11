@@ -2,11 +2,13 @@ package com.example.acer.funmofoapp;
 
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.view.WindowManager;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -32,12 +34,13 @@ public class PreviewActivity extends AppCompatActivity {
         productImageView.setImageResource(bundle.getInt("imageID"));
 
 
-
         //rating bar
         LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
-        stars.getDrawable(2).setColorFilter(ContextCompat.getColor(this,R.color.cyan), PorterDuff.Mode.SRC_ATOP);
+
+        stars.getDrawable(2).setColorFilter(ContextCompat.getColor(this, R.color.orange_yellow), PorterDuff.Mode.SRC_ATOP);
         ratingBar.setRating(Float.parseFloat("4.0"));
         ratingBar.setEnabled(false);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
     }
 }

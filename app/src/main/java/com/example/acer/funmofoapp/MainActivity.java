@@ -1,5 +1,6 @@
 package com.example.acer.funmofoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        FragmentManager mgr=getSupportFragmentManager();
+        FragmentTransaction trans=mgr.beginTransaction();
+        trans.replace(R.id.fragment,new HomeFragment());
+        trans.commit();
+
+
     }
 
     @Override
@@ -106,24 +115,38 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.wishlist2) {
-
+            trans.replace(R.id.fragment,new WishlistFragment());
+            trans.commit();
 
         } else if (id == R.id.cart2) {
-
+            trans.replace(R.id.fragment,new CartFragment());
+            trans.commit();
 
         } else if(id == R.id.orders){
-
+           /* Intent i1=new Intent(MainActivity.this,OrderActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();*/
 
         } else if(id == R.id.contact_us){
 
         } else if(id == R.id.account){
-
+            Intent i1=new Intent(MainActivity.this,MyAccountActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();
 
         } else if(id == R.id.password){
-
+            Intent i1=new Intent(MainActivity.this,ChangePasswordActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();
 
         } else if(id == R.id.logout){
-
+            Intent i1=new Intent(MainActivity.this,SignInActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();
         }
 
 
