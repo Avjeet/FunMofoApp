@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_layout"
     android:layout_width="250dp"
     android:layout_height="150dp"
     android:orientation="horizontal"
     android:paddingRight="10dp">
 
     <ImageView
+        android:transitionName="productImage"
         android:id="@+id/product_img"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"

@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        FragmentManager mgr=getSupportFragmentManager();
+        FragmentTransaction trans=mgr.beginTransaction();
+        trans.replace(R.id.fragment,new HomeFragment());
+        trans.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +93,7 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction trans=mgr.beginTransaction();
 
         if (id == R.id.home) {
-           trans.replace(R.id.fragment_container,new HomeFragment());
+           trans.replace(R.id.fragment,new HomeFragment());
             trans.commit();
         } else if (id == R.id.about) {
 

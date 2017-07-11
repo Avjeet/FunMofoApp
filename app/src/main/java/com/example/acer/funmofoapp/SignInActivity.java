@@ -1,8 +1,6 @@
 package com.example.acer.funmofoapp;
 
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +26,7 @@ public class SignInActivity extends AppCompatActivity {
         loginButton =(Button) findViewById(R.id.login_button);
         forgotPassTxt=(TextView)findViewById(R.id.forgot_pass_txt);
         registerTxt=(TextView) findViewById(R.id.register_txt);
-        fragment=(FrameLayout) findViewById(R.id.fragment_container);
+        fragment=(FrameLayout) findViewById(R.id.fragment);
 
 
 
