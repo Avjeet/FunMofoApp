@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.acer.funmofoapp.PreviewActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue">
+
+        <RelativeLayout
+            android:id="@+id/layout_back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="15dp">
+
+            <ImageView
+                android:id="@+id/iv_back2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/ic_prev" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativelayout"
+        android:layout_above="@+id/buy_now_btn">
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativelayout"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativelayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativelayout">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:transitionName="productImage"
+                        android:id="@+id/card_image"
+                        android:layout_width="250dp"
+                        android:layout_height="270dp"
+                        android:layout_gravity="center_horizontal"
+                         />
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_light" />
+
+            <RelativeLayout
+                android:background="@color/white"
+                android:id="@+id/relativelayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativelayout1">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Durex"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvName"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="5dp"
+                    android:text="₹ 60"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/cyan"
+                    android:textSize="18sp" />
+
+
+
+                <TextView
+                    android:id="@+id/seller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/price"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sold By: Mohan Pharmacist"
+                    android:layout_marginBottom="15dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/grey_dark"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:layout_alignBottom="@id/price"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="55dp"
+                    android:src="@drawable/ic_share_icon" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:background="@drawable/border_grey_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_cart4"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:textSize="16sp"
+                android:drawablePadding="10dp"
+                android:text="Add to Cart"
+                android:textColor="@color/orange_yellow"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_grey_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="23dp"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:paddingRight="70dp"
+                android:text="10% off when you pay with PayTm. Offer valid: June 23-July 16"
+                android:alpha="0.7"
+                android:textColor="@color/black"/>
+
+
+
+            <RelativeLayout
+                android:id="@+id/relativelayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativelayout2"
+                android:layout_marginTop="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <RatingBar
+                            android:layout_centerVertical="true"
+                            android:id="@+id/ratingBar"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="35dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/ratingText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginTop="5dp"
+                            android:text="4"
+                            android:textColor="#000"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/tvReview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="REVIEWS >"
+                            android:textColor="@color/cyan"
+                            android:textSize="16dp" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@id/buy_now_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue"
+        android:minWidth="150dp">
+
+        <TextView
+            android:id="@+id/buy_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20sp"
+            android:text="@string/buy_now"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        FragmentManager mgr=getSupportFragmentManager();
+        FragmentTransaction trans=mgr.beginTransaction();
+        trans.replace(R.id.fragment,new HomeFragment());
+        trans.commit();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -86,11 +92,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        FragmentManager mgr=getSupportFragmentManager();
-//        FragmentTransaction trans=mgr.beginTransaction();
+
+        FragmentManager mgr=getSupportFragmentManager();
+        FragmentTransaction trans=mgr.beginTransaction();
+
 
         if (id == R.id.home) {
-
+           trans.replace(R.id.fragment,new HomeFragment());
+            trans.commit();
         } else if (id == R.id.about) {
 
         } else if (id == R.id.top) {
@@ -98,12 +107,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.New) {
 
         } else if (id == R.id.wishlist2) {
-//            trans.replace(R.id.fragment,new WishlistFragment());
-//            trans.commit();
+
+            trans.replace(R.id.fragment,new WishlistFragment());
+            trans.commit();
 
         } else if (id == R.id.cart2) {
-//            trans.replace(R.id.fragment,new CartFragment());
-//            trans.commit();
+            trans.replace(R.id.fragment,new CartFragment());
+            trans.commit();
 
         } else if(id == R.id.orders){
             Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
@@ -126,7 +136,10 @@ public class MainActivity extends AppCompatActivity
             finish();
 
         } else if(id == R.id.logout){
-
+            Intent i1=new Intent(MainActivity.this,SignInActivity.class);
+            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i1);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
