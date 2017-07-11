@@ -52,12 +52,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        FragmentManager mgr=getSupportFragmentManager();
-        FragmentTransaction trans=mgr.beginTransaction();
-        trans.replace(R.id.fragment,new HomeFragment());
-        trans.commit();
-
-
     }
 
     @Override
@@ -98,8 +92,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
         FragmentManager mgr=getSupportFragmentManager();
         FragmentTransaction trans=mgr.beginTransaction();
+
 
         if (id == R.id.home) {
            trans.replace(R.id.fragment,new HomeFragment());
@@ -108,13 +104,10 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.top) {
 
-
-
         } else if (id == R.id.New) {
 
-
-
         } else if (id == R.id.wishlist2) {
+
             trans.replace(R.id.fragment,new WishlistFragment());
             trans.commit();
 
@@ -123,10 +116,10 @@ public class MainActivity extends AppCompatActivity
             trans.commit();
 
         } else if(id == R.id.orders){
-           /* Intent i1=new Intent(MainActivity.this,OrderActivity.class);
+            Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
             i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-            finish();*/
+            finish();
 
         } else if(id == R.id.contact_us){
 
@@ -148,8 +141,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(i1);
             finish();
         }
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
