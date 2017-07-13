@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.acer.funmofoapp.Adapters.DeliveredOrderItemAdapter;
@@ -29,6 +30,8 @@ public class MyOrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_order);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         rv_ongoing_orders=(RecyclerView)findViewById(R.id.recycler_ongoing_orders);
         rv_delivered_orders=(RecyclerView)findViewById(R.id.recycler_delivered_orders);

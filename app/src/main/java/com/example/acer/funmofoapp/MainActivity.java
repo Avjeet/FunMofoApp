@@ -17,15 +17,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TextView tvtitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tvtitle=(TextView)findViewById(R.id.tv_title);
         setSupportActionBar(toolbar);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -119,10 +123,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.New) {
 
         } else if (id == R.id.wishlist2) {
+            tvtitle.setText("Wishlist");
             trans.replace(R.id.fragment,new WishlistFillFragment());
             trans.commit();
 
         } else if (id == R.id.cart2) {
+            tvtitle.setText("Wishlist");
             trans.replace(R.id.fragment,new CartFillFragment());
             trans.commit();
 
