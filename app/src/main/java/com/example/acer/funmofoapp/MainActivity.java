@@ -1,5 +1,6 @@
 package com.example.acer.funmofoapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -60,7 +61,17 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+          //  super.onBackPressed();
+            new android.app.AlertDialog.Builder(this)
+                    .setMessage("Are you really want to exit ??")
+                    .setNegativeButton("CANCEL", null)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            MainActivity.super.onBackPressed();
+                            finish();
+                        }
+                    }).create().show();
         }
     }
 
@@ -107,7 +118,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.New) {
 
         } else if (id == R.id.wishlist2) {
-
             trans.replace(R.id.fragment,new WishlistFragment());
             trans.commit();
 

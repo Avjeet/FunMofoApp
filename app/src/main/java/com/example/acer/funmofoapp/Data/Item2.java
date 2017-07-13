@@ -1,4 +1,6 @@
-package com.example.acer.funmofoapp;
+package com.example.acer.funmofoapp.Data;
+
+import com.example.acer.funmofoapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,12 +59,6 @@ public class Item2 {
         this.image1=image1;
     }
 
-    public static List<Item2> getList() {
-        List<Item2> ilist = new ArrayList<>();
-        ilist.add(new Item2("Placed On: 20 June,2017","Order Id:1345739872900","My.Size","Rs. 110",
-                             R.drawable.pic8));
-        ilist.add(new Item2("Placed On: 10 May,2017","Order Id:189704842900","Skins","Rs. 90",
-                            R.drawable.pic6));
-        return ilist;
-    }
+
+
 }

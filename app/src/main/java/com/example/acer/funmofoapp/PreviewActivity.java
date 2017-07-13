@@ -1,5 +1,6 @@
 package com.example.acer.funmofoapp;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.view.WindowManager;
 import android.widget.RatingBar;
@@ -15,7 +17,7 @@ import android.widget.TextView;
 public class PreviewActivity extends AppCompatActivity {
     private RatingBar ratingBar;
     private TextView nametextView,pricetextview;
-    private ImageView productImageView;
+    private ImageView productImageView,ivback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,17 @@ public class PreviewActivity extends AppCompatActivity {
         nametextView=(TextView) findViewById(R.id.tvName);
         pricetextview=(TextView) findViewById(R.id.price);
         productImageView=(ImageView) findViewById(R.id.card_image);
+        ivback=(ImageView)findViewById(R.id.iv_back2);
+
+        ivback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(PreviewActivity.this,MainActivity.class);
+                i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i1);
+                finish();
+            }
+        });
 
         Bundle bundle = getIntent().getExtras();
         Log.w("name","name:"+bundle.getString("name"));
@@ -42,5 +55,14 @@ public class PreviewActivity extends AppCompatActivity {
         ratingBar.setEnabled(false);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i1=new Intent(PreviewActivity.this,MainActivity.class);
+        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i1);
+        finish();
     }
 }
