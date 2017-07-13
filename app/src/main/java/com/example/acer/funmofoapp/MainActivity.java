@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity
             trans.commit();
 
         } else if (id == R.id.cart2) {
-            trans.replace(R.id.fragment,new CartFragment());
+            trans.replace(R.id.fragment,new CartFillFragment());
             trans.commit();
 
         } else if(id == R.id.orders){

@@ -23,21 +23,36 @@ public class CartViewItemAdapter extends RecyclerView.Adapter<CartViewItemAdapte
         this.list=list;
     }
 
+    public class ItemViewHolder extends RecyclerView.ViewHolder{
+        public ImageView ivPic,ivPlus,ivMinus,ivClose;
+        public TextView name,price;
+
+        public ItemViewHolder(View itemView) {
+            super(itemView);
+            ivPic= (ImageView) itemView.findViewById(R.id.img2);
+            ivPlus= (ImageView) itemView.findViewById(R.id.imPlus);
+            ivMinus= (ImageView) itemView.findViewById(R.id.imMinus);
+            ivClose= (ImageView) itemView.findViewById(R.id.imClose);
+            name= (TextView) itemView.findViewById(R.id.tvName);
+            price= (TextView) itemView.findViewById(R.id.tvPrice);
+        }
+    }
+
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-       View myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_cart_fill,parent,false);
+       View myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item,parent,false);
                return new ItemViewHolder(myview);
     }
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        ItemViewHolder  viewHolder=(ItemViewHolder)holder;
-        viewHolder.ivPic.setImageResource(list.get(position).getImageID());
-        viewHolder.ivPlus.setImageResource(list.get(position).getImPlus());
-        viewHolder.ivMinus.setImageResource(list.get(position).getImMinus());
-        viewHolder.ivClose.setImageResource(list.get(position).getImClose());
-        viewHolder.name.setText(list.get(position).getProductName());
-        viewHolder.price.setText(list.get(position).getPrice());
+       // ItemViewHolder  viewHolder=holder;
+        holder.ivPic.setImageResource(list.get(position).getImageID());
+        holder.ivPlus.setImageResource(list.get(position).getImPlus());
+        holder.ivMinus.setImageResource(list.get(position).getImMinus());
+        holder.ivClose.setImageResource(list.get(position).getImClose());
+        holder.name.setText(list.get(position).getProductName());
+        holder.price.setText(list.get(position).getPrice());
 
     }
 
@@ -46,18 +61,5 @@ public class CartViewItemAdapter extends RecyclerView.Adapter<CartViewItemAdapte
         return list.size();
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
-        public ImageView ivPic,ivPlus,ivMinus,ivClose;
-        public TextView name,price;
 
-        public ItemViewHolder(View itemView) {
-            super(itemView);
-            ivPic= (ImageView) itemView.findViewById(R.id.img);
-            ivPlus= (ImageView) itemView.findViewById(R.id.imPlus);
-            ivMinus= (ImageView) itemView.findViewById(R.id.imMinus);
-            ivClose= (ImageView) itemView.findViewById(R.id.imClose);
-            name= (TextView) itemView.findViewById(R.id.tvName);
-            price= (TextView) itemView.findViewById(R.id.tvPrice);
-        }
-    }
 }
