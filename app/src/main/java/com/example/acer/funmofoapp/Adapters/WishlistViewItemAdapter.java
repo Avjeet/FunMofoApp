@@ -16,10 +16,10 @@ import java.util.List;
  * Created by ACER on 13-Jul-17.
  */
 
-public class CartViewItemAdapter extends RecyclerView.Adapter<CartViewItemAdapter.ItemViewHolder> {
+public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewItemAdapter.ItemViewHolder> {
 
     public List<CartProduct> list;
-    public CartViewItemAdapter(List<CartProduct> list){
+    public WishlistViewItemAdapter(List<CartProduct> list){
         this.list=list;
     }
 
@@ -29,15 +29,15 @@ public class CartViewItemAdapter extends RecyclerView.Adapter<CartViewItemAdapte
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            ivPic= (ImageView) itemView.findViewById(R.id.img2);
-            name= (TextView) itemView.findViewById(R.id.tvName);
-            price= (TextView) itemView.findViewById(R.id.tvPrice);
+            ivPic= (ImageView) itemView.findViewById(R.id.image2);
+            name= (TextView) itemView.findViewById(R.id.tv_Name);
+            price= (TextView) itemView.findViewById(R.id.tv_Price);
         }
     }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-       View myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item,parent,false);
+       View myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.wishlist_item,parent,false);
                return new ItemViewHolder(myview);
     }
 

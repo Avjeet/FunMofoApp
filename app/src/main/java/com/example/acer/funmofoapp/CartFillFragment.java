@@ -1,7 +1,7 @@
 package com.example.acer.funmofoapp;
 
-
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -33,11 +33,19 @@ public class CartFillFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart_fill, container, false);
+        rvCart= (RecyclerView) view.findViewById(R.id.rvCart);
 
+        return view;
+    }
+
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         list=new ArrayList<>();
-        list.add(new CartProduct(R.drawable.pic1,R.drawable.ic_add_circle,R.drawable.ic_remove_circle,R.drawable.ic_close,
+        list.add(new CartProduct(R.drawable.pic1,
                 "Durex","Rs. 60"));
-        list.add(new CartProduct(R.drawable.pic1,R.drawable.ic_add_circle,R.drawable.ic_remove_circle,R.drawable.ic_close,
+        list.add(new CartProduct(R.drawable.pic2,
                 "Skore","Rs. 80"));
 
         cartAdapter=new CartViewItemAdapter(list);
@@ -45,8 +53,5 @@ public class CartFillFragment extends Fragment {
         rvCart.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
-        // Inflate the layout for this fragment
-        return view;
     }
-
 }
