@@ -6,11 +6,8 @@ public class CartProduct {
     private String price;
 
 
-    public CartProduct(int imageID, int imPlus, int imMinus, int imClose, String productName, String price) {
+    public CartProduct(int imageID, String productName, String price) {
         this.imageID = imageID;
-        this.imPlus = imPlus;
-        this.imMinus = imMinus;
-        this.imClose = imClose;
         this.productName = productName;
         this.price = price;
 
@@ -20,17 +17,6 @@ public class CartProduct {
         return imageID;
     }
 
-    public int getImPlus() {
-        return imPlus;
-    }
-
-    public int getImMinus() {
-        return imMinus;
-    }
-
-    public int getImClose() {
-        return imClose;
-    }
 
     public String getProductName() {
         return productName;
@@ -44,18 +30,6 @@ public class CartProduct {
 
     public void setImageID(int imageID) {
         this.imageID = imageID;
-    }
-
-    public void setImPlus(int imPlus) {
-        this.imPlus = imPlus;
-    }
-
-    public void setImMinus(int imMinus) {
-        this.imMinus = imMinus;
-    }
-
-    public void setImClose(int imClose) {
-        this.imClose = imClose;
     }
 
     public void setProductName(String productName) {

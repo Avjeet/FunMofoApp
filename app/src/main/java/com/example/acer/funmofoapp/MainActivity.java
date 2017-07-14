@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.wishlist2) {
 
-            trans.replace(R.id.fragment,new WishlistFragment());
+            trans.replace(R.id.fragment,new WishlistFillFragment());
             trans.commit();
 
         } else if (id == R.id.cart2) {
