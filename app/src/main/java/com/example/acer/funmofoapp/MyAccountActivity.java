@@ -22,6 +22,7 @@ public class MyAccountActivity extends AppCompatActivity {
         ivback=(ImageView)findViewById(R.id.iv_back3);
         tv_view_order=(TextView)findViewById(R.id.tv_view_order);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         tv_address.setText(" Block - AK \n House No.-35 \n Shalimar Bagh ,Delhi ");
         ivback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,15 +34,15 @@ public class MyAccountActivity extends AppCompatActivity {
             }
         });
 
-       /* tv_view_order.setOnClickListener(new View.OnClickListener() {
+        tv_view_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(MyAccountActivity.this,OrderActivity.class);
+                Intent i1=new Intent(MyAccountActivity.this,MyOrderActivity.class);
                 i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i1);
                 finish();
             }
-        });*/
+        });
 
     }
 

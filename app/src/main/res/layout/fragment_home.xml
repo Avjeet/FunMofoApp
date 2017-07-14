@@ -10,7 +10,6 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_marginTop="?attr/actionBarSize"
             android:layout_width="match_parent"
             android:layout_height="200dp">
             <android.support.v4.view.ViewPager
@@ -86,8 +85,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
+        <TextView
+            android:background="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/grey_dark"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_grey_24dp"
+            android:textAppearance="@style/Base.Theme.AppCompat.Light"
+            />
 
-        <FrameLayout
+      <!--  <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white">
@@ -106,7 +119,7 @@
                 android:textAppearance="@style/Base.Theme.AppCompat.Light"
                 />
 
-        </FrameLayout>
+        </FrameLayout>-->
 
 
 

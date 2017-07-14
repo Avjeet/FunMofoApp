@@ -36,6 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="MySize"
+                android:id="@+id/tv_Name"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:layout_height="wrap_content" />
@@ -56,6 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="Rs. 90"
+                android:id="@+id/tv_Price"
                 android:textColor="@color/blue"
                 android:textSize="18dp"
                 android:layout_height="wrap_content" />

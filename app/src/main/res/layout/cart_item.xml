@@ -23,7 +23,7 @@
             android:orientation="horizontal">
             <ImageView
                 android:layout_width="80dp"
-                android:id="@+id/img"
+                android:id="@+id/img2"
                 android:src="@drawable/pic1"
                 android:layout_height="80dp"
                 />
@@ -44,19 +44,20 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_margin="5dp"
-            android:id="@+id/ivClose"
+            android:id="@+id/imClose"
             android:src="@drawable/ic_close"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rs. 60"
+            android:id="@+id/tvPrice"
             android:textSize="18dp"
             android:layout_marginRight="7dp"
             android:textColor="@color/blue"
             android:layout_marginTop="20dp"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/ivClose"/>
+            android:layout_below="@+id/imClose"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,6 +66,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="4dp"
+                android:id="@+id/imPlus"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/ic_add_circle"/>
@@ -77,6 +79,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/imMinus"
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/ic_remove_circle"/>
         </LinearLayout>

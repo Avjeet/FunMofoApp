@@ -1,5 +1,6 @@
 package com.example.acer.funmofoapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,15 +17,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TextView tvtitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tvtitle=(TextView)findViewById(R.id.tv_title);
         setSupportActionBar(toolbar);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -61,7 +66,17 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+          //  super.onBackPressed();
+            new android.app.AlertDialog.Builder(this)
+                    .setMessage("Are you really want to exit ??")
+                    .setNegativeButton("CANCEL", null)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            MainActivity.super.onBackPressed();
+                            finish();
+                        }
+                    }).create().show();
         }
     }
 
@@ -108,12 +123,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.New) {
 
         } else if (id == R.id.wishlist2) {
-
-            trans.replace(R.id.fragment,new WishlistFragment());
+            tvtitle.setText("Wishlist");
+            trans.replace(R.id.fragment,new WishlistFillFragment());
             trans.commit();
 
         } else if (id == R.id.cart2) {
-            trans.replace(R.id.fragment,new CartFragment());
+            tvtitle.setText("Wishlist");
+            trans.replace(R.id.fragment,new CartFillFragment());
             trans.commit();
 
         } else if(id == R.id.orders){
