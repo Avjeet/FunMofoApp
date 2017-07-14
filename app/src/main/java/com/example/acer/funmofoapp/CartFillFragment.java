@@ -47,6 +47,10 @@ public class CartFillFragment extends Fragment {
                 "Durex","Rs. 60"));
         list.add(new CartProduct(R.drawable.pic2,
                 "Skore","Rs. 80"));
+        list.add(new CartProduct(R.drawable.pic2,
+                "Manforce","Rs. 90"));
+        list.add(new CartProduct(R.drawable.pic2,
+                "Assorted","Rs. 90"));
 
         cartAdapter=new CartViewItemAdapter(list);
         rvCart.setAdapter(cartAdapter);
