@@ -8,32 +8,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".SignUpActivity"
-            android:screenOrientation="portrait"/>
 
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".SignUpActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ChangePasswordActivity" android:screenOrientation="portrait" />
+        <activity android:name=".MyAccountActivity" android:screenOrientation="portrait" />
+        <activity android:name=".OtpActivity" android:screenOrientation="portrait" />
 
-
-
-        </activity>
-
-        <activity
-            android:name=".ChangePasswordActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ForgotPasswordActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MyAccountActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".OtpActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".SignInActivity">
+        <activity android:name=".SignInActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,20 +23,10 @@
             </intent-filter>
            </activity>
 
-        <activity android:name=".OrderDetails">
-
-        </activity>
-
-        <activity
-            android:name=".OrderTrackingActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".MyOrderActivity"/>
-
-
-        <activity android:name=".PreviewActivity"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+        <activity android:name=".OrderDetails" android:screenOrientation="portrait"/>
+        <activity android:name=".OrderTrackingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MyOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PreviewActivity" android:parentActivityName=".MainActivity" android:screenOrientation="portrait"/>
 
     </application>
 

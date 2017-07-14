@@ -66,23 +66,11 @@ public class SignInActivity extends AppCompatActivity {
         });
 
 
-
-
-
     }
 
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
-        new android.app.AlertDialog.Builder(this)
-                .setMessage("Are you really want to exit ??")
-                .setNegativeButton("CANCEL", null)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        SignInActivity.super.onBackPressed();
-                        finish();
-                    }
-                }).create().show();
+        finish();
     }
 }
