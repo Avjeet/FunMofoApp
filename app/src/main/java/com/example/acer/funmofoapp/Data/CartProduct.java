@@ -1,7 +1,7 @@
 package com.example.acer.funmofoapp.Data;
 
 public class CartProduct {
-    private int imageID, imPlus, imMinus, imClose;
+    private int imageID;
     private String productName;
     private String price;
 

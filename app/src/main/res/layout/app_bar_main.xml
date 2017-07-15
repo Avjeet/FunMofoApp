@@ -18,7 +18,7 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
             <TextView
-                android:text="AAA"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="25dp"
                 android:id="@+id/tv_title"

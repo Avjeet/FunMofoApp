@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tvtitle=(TextView)findViewById(R.id.tv_title);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         FragmentManager mgr=getSupportFragmentManager();
         FragmentTransaction trans=mgr.beginTransaction();
@@ -114,11 +114,16 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.home) {
+            tvtitle.setText(" ");
            trans.replace(R.id.fragment,new HomeFragment());
             trans.commit();
         } else if (id == R.id.about) {
 
         } else if (id == R.id.top) {
+            tvtitle.setText("Top Products");
+            trans.replace(R.id.fragment,new TopFragment());
+            trans.commit();
+
 
         } else if (id == R.id.New) {
 
@@ -128,7 +133,7 @@ public class MainActivity extends AppCompatActivity
             trans.commit();
 
         } else if (id == R.id.cart2) {
-            tvtitle.setText("Wishlist");
+            tvtitle.setText("Cart");
             trans.replace(R.id.fragment,new CartFillFragment());
             trans.commit();
 

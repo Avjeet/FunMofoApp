@@ -17,10 +17,12 @@ import java.util.List;
  */
 
 public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewItemAdapter.ItemViewHolder> {
-
+private String tag;
+    private View myview;
     public List<CartProduct> list;
-    public WishlistViewItemAdapter(List<CartProduct> list){
+    public WishlistViewItemAdapter(List<CartProduct> list,String tag){
         this.list=list;
+        this.tag=tag;
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
@@ -37,8 +39,12 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-       View myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.wishlist_item,parent,false);
-               return new ItemViewHolder(myview);
+        if(tag=="Wishlist")
+            myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.wishlist_item,parent,false);
+        else if(tag=="cart")
+            myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item,parent,false);
+
+        return new ItemViewHolder(myview);
     }
 
     @Override
