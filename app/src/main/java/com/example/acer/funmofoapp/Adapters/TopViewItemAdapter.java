@@ -21,28 +21,20 @@ import static com.example.acer.funmofoapp.Data.Pr1.card2;
 
 public class TopViewItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-
     public List<Pr1> list;
-
-
     public TopViewItemAdapter(List<Pr1> list){
         this.list=list;
     }
 
-
-
-
     @Override
     public int getItemViewType(int position) {
-
-     return list.get(position).getType();
-
-   }
-
+        return list.get(position).getType();
+    }
 
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View view;
         switch (viewType){
             case card1:

@@ -48,19 +48,13 @@ public class TopFragment extends Fragment {
 
         return view;
     }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         topAdapter=new TopViewItemAdapter(getData());
         rvTop.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvTop.setAdapter(topAdapter);
-
-
-
-
-
-
-
 
     }
 
