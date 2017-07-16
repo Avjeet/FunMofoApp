@@ -107,11 +107,8 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-
         FragmentManager mgr=getSupportFragmentManager();
         FragmentTransaction trans=mgr.beginTransaction();
-
 
         if (id == R.id.home) {
            trans.replace(R.id.fragment,new HomeFragment());
@@ -120,15 +117,17 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.top) {
 
-        } else if (id == R.id.New) {
+        }
+        //else if (id == R.id.New) {
+        //}
 
-        } else if (id == R.id.wishlist2) {
-            tvtitle.setText("Wishlist");
+        else if (id == R.id.wishlist2) {
+      //      tvtitle.setText("Wishlist");
             trans.replace(R.id.fragment,new WishlistFillFragment());
             trans.commit();
 
         } else if (id == R.id.cart2) {
-            tvtitle.setText("Wishlist");
+       //     tvtitle.setText("Wishlist");
             trans.replace(R.id.fragment,new CartFillFragment());
             trans.commit();
 

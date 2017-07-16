@@ -14,10 +14,12 @@
             android:id="@+id/top"
             android:icon="@drawable/ic_top"
             android:title="Top Products" />
+        <!--
         <item
             android:id="@+id/New"
             android:icon="@drawable/ic_new"
             android:title="New Collections" />
+            -->
 
         <item
             android:id="@+id/wishlist2"
