@@ -45,14 +45,14 @@ public class WishlistFillFragment extends Fragment {
         list=new ArrayList<>();
         list.add(new CartProduct(R.drawable.pic1,
                 "Durex","Rs. 60"));
-        list.add(new CartProduct(R.drawable.pic2,
+        list.add(new CartProduct(R.drawable.pic10,
                 "Skore","Rs. 80"));
         list.add(new CartProduct(R.drawable.pic2,
                 "Manforce","Rs. 90"));
-        list.add(new CartProduct(R.drawable.pic2,
+        list.add(new CartProduct(R.drawable.pic4,
                 "Assorted","Rs. 90"));
 
-        wishlistAdapter=new WishlistViewItemAdapter(list);
+        wishlistAdapter=new WishlistViewItemAdapter(list,"Wishlist");
         rvWishlist.setAdapter(wishlistAdapter);
         rvWishlist.setLayoutManager(new GridLayoutManager(getActivity(),2));
 
