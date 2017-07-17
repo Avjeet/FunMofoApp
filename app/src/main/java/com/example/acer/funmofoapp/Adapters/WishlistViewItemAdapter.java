@@ -1,32 +1,32 @@
 package com.example.acer.funmofoapp.Adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.acer.funmofoapp.Data.CartProduct;
 import com.example.acer.funmofoapp.R;
-
 import java.util.List;
 
-/**
- * Created by ACER on 13-Jul-17.
- */
-
 public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewItemAdapter.ItemViewHolder> {
-private String tag;
+
+    private String tag;
     private View myview;
     public List<CartProduct> list;
+    public Context context;
+
     public WishlistViewItemAdapter(List<CartProduct> list,String tag){
         this.list=list;
         this.tag=tag;
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
-        public ImageView ivPic;
+
+        public ImageView ivPic,ivshare,ivdelete,imclose;
         public TextView name,price;
 
         public ItemViewHolder(View itemView) {
@@ -34,31 +34,78 @@ private String tag;
             ivPic= (ImageView) itemView.findViewById(R.id.image2);
             name= (TextView) itemView.findViewById(R.id.tv_Name);
             price= (TextView) itemView.findViewById(R.id.tv_Price);
+            ivshare=(ImageView)itemView.findViewById(R.id.iv_share);
+            ivdelete=(ImageView)itemView.findViewById(R.id.iv_delete);
+            imclose=(ImageView)itemView.findViewById(R.id.imClose);
         }
     }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        context=parent.getContext();
+
         if(tag=="Wishlist")
             myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.wishlist_item,parent,false);
         else if(tag=="cart")
             myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item,parent,false);
 
+
         return new ItemViewHolder(myview);
     }
 
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, int position) {
-        holder.ivPic.setImageResource(list.get(position).getImageID());
-        holder.name.setText(list.get(position).getProductName());
-        holder.price.setText(list.get(position).getPrice());
+    public void onBindViewHolder(ItemViewHolder holder, final int position) {
 
+        switch (tag)
+        {
+            case "Wishlist" :
+                holder.ivPic.setImageResource(list.get(position).getImageID());
+                holder.name.setText(list.get(position).getProductName());
+                holder.price.setText(list.get(position).getPrice());
+
+                holder.ivshare.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent shareintent=new Intent();
+                        shareintent.setAction(Intent.ACTION_SEND);
+                        context.startActivity(Intent.createChooser(shareintent," "));
+                    }
+                });
+
+
+                holder.ivdelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        list.remove(position);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position,list.size());
+
+                    }
+                });
+                break;
+
+            case "cart" :
+
+                holder.ivPic.setImageResource(list.get(position).getImageID());
+                holder.name.setText(list.get(position).getProductName());
+                holder.price.setText(list.get(position).getPrice());
+
+                holder.imclose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        list.remove(position);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position,list.size());
+                    }
+                });
+                break;
+        }
     }
 
     @Override
     public int getItemCount() {
         return list.size();
     }
-
 
 }

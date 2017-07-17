@@ -15,9 +15,6 @@ import java.util.List;
 import static com.example.acer.funmofoapp.Data.Pr1.card1;
 import static com.example.acer.funmofoapp.Data.Pr1.card2;
 
-/**
- * Created by ACER on 13-Jul-17.
- */
 
 public class TopViewItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -28,7 +25,8 @@ public class TopViewItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemViewType(int position) {
-        return list.get(position).getType();
+
+        return position%2;
     }
 
 
@@ -53,7 +51,7 @@ public class TopViewItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
 
-            switch (list.get(position).getType()){
+            switch (position%2){
                 case card1:
                     ((Top1ViewHolder)holder).ivPic.setImageResource(list.get(position).getImageID());
                     ((Top1ViewHolder)holder).name.setText(list.get(position).getProductName());

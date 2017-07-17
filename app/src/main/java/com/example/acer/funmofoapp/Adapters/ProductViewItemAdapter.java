@@ -65,10 +65,10 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
                     data.putInt("imageID",currentProduct.getImageID());
                     detailActivityIntent.putExtras(data);
                     context.startActivity(detailActivityIntent,optionCompat.toBundle());
-
-                    itemList.add(currentPos,p);
-                    notifyItemInserted(currentPos);
-                    notifyItemRangeChanged(currentPos,itemList.size());
+//
+//                    itemList.add(currentPos,p);
+//                    notifyItemInserted(currentPos);
+//                    notifyItemRangeChanged(currentPos,itemList.size());
 
 //                    if (tag=="top")
 //                    {

@@ -35,6 +35,7 @@ public class WishlistFillFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wishlist_fill, container, false);
+
         rvWishlist= (RecyclerView) view.findViewById(R.id.rvWishlist);
         // Inflate the layout for this fragment
         return view;

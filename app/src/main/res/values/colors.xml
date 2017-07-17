@@ -18,4 +18,7 @@
     <color name="grey_vlight">#EEEEEE</color>
     <color name="orange_yellow">#FFEAB33D</color>
     <color name="Background">#f5f4f4</color>
+    <color name="vlight_green">#e4f5e0</color>
+    <color name="orange_vlight">#fff4d5</color>
+    <color name="light_grey">#f4f4f4</color>
 </resources>
