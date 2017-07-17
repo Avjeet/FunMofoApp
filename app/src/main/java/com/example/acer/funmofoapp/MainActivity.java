@@ -28,11 +28,14 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tvtitle=(TextView)findViewById(R.id.tv_title);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         FragmentManager mgr=getSupportFragmentManager();
         FragmentTransaction trans=mgr.beginTransaction();
         trans.replace(R.id.fragment,new HomeFragment());
@@ -107,16 +110,14 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-
         FragmentManager mgr=getSupportFragmentManager();
         FragmentTransaction trans=mgr.beginTransaction();
-
 
         if (id == R.id.home) {
             tvtitle.setText(" ");
            trans.replace(R.id.fragment,new HomeFragment());
             trans.commit();
+
         } else if (id == R.id.about) {
 
         } else if (id == R.id.top) {
@@ -125,15 +126,19 @@ public class MainActivity extends AppCompatActivity
             trans.commit();
 
 
-        } else if (id == R.id.New) {
+        }
+        //else if (id == R.id.New) {
+        //}
 
-        } else if (id == R.id.wishlist2) {
+        else if (id == R.id.wishlist2) {
             tvtitle.setText("Wishlist");
             trans.replace(R.id.fragment,new WishlistFillFragment());
             trans.commit();
 
         } else if (id == R.id.cart2) {
+
             tvtitle.setText("Cart");
+
             trans.replace(R.id.fragment,new CartFillFragment());
             trans.commit();
 

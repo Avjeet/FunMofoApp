@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
         recentlyViewRecycler = (RecyclerView) view.findViewById(R.id.recently_view_recycler);
         topProductRecycler=(RecyclerView) view.findViewById(R.id.top_product_recycler);
 
-        timer = new CountDownTimer(5 * 1000, 1000) {
+        timer = new CountDownTimer(3 * 1000, 1000) {
             @Override
             public void onTick(long l) {
                 //do nothing
@@ -86,10 +86,10 @@ public class HomeFragment extends Fragment {
 
         bannerImagesID = new ArrayList<>();
 
-        bannerImagesID.add(R.drawable.banner1);
         bannerImagesID.add(R.drawable.banner2);
-        bannerImagesID.add(R.drawable.banner3);
         bannerImagesID.add(R.drawable.banner4);
+        bannerImagesID.add(R.drawable.banner1);
+        bannerImagesID.add(R.drawable.banner3);
 
         for (int i = 0; i < bannerImagesID.size(); i++) {
             dotTabLayout.addTab(dotTabLayout.newTab(), i);

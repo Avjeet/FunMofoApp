@@ -17,23 +17,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TopFragment extends Fragment {
     private RecyclerView rvTop;
     private TopViewItemAdapter topAdapter;
     public static List<Pr1> getData(){
         List<Pr1> list =new ArrayList<>();
-        list.add(new Pr1(R.drawable.pic1,"Durex","Rs. 60",Pr1.card1));
-        list.add(new Pr1(R.drawable.pic10,"Skore","Rs. 80",Pr1.card2));
-        list.add(new Pr1(R.drawable.pic2,"Manforce","Rs. 100",Pr1.card1));
-        list.add(new Pr1(R.drawable.pic4,"Assorted","Rs. 50",Pr1.card2));
+        list.add(new Pr1(R.drawable.pic1,"Durex","Rs. 60"));
+        list.add(new Pr1(R.drawable.pic10,"Skore","Rs. 80"));
+        list.add(new Pr1(R.drawable.pic2,"Manforce","Rs. 100"));
+        list.add(new Pr1(R.drawable.pic4,"Assorted","Rs. 50"));
         return list;
 
     }
-
-
 
     public TopFragment() {
         // Required empty public constructor
@@ -48,19 +43,13 @@ public class TopFragment extends Fragment {
 
         return view;
     }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         topAdapter=new TopViewItemAdapter(getData());
         rvTop.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvTop.setAdapter(topAdapter);
-
-
-
-
-
-
-
 
     }
 
