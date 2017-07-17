@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,6 +17,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.example.acer.funmofoapp.Adapters.BannerViewPagerAdapter;
 import com.example.acer.funmofoapp.Adapters.ProductViewItemAdapter;
@@ -37,6 +40,8 @@ public class HomeFragment extends Fragment {
 
     private CountDownTimer timer;
 
+    private RelativeLayout rlMore;
+
     private RecyclerView recentlyViewRecycler;
     private ProductViewItemAdapter productItemAdapter;
     private ArrayList<Product> productList;
@@ -57,10 +62,22 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        rlMore= (RelativeLayout) view.findViewById(R.id.rlMore);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         dotTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         recentlyViewRecycler = (RecyclerView) view.findViewById(R.id.recently_view_recycler);
         topProductRecycler=(RecyclerView) view.findViewById(R.id.top_product_recycler);
+
+        rlMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager mgr=getActivity().getSupportFragmentManager();
+                FragmentTransaction trans=mgr.beginTransaction();
+                trans.replace(R.id.fragment,new TopFragment());
+                trans.commit();
+
+            }
+        });
 
         timer = new CountDownTimer(3 * 1000, 1000) {
             @Override

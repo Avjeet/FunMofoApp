@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
            </activity>
-
+        <activity android:name=".ForgotPasswordActivity" android:screenOrientation="portrait"/>
         <activity android:name=".OrderDetails" android:screenOrientation="portrait"/>
         <activity android:name=".OrderTrackingActivity" android:screenOrientation="portrait"/>
         <activity android:name=".MyOrderActivity" android:screenOrientation="portrait"/>
