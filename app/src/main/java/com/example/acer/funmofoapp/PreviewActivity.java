@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class PreviewActivity extends AppCompatActivity {
     private RatingBar ratingBar;
     private TextView nametextView,pricetextview;
-    private ImageView productImageView,ivback;
+    private ImageView productImageView,ivback,ivshare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class PreviewActivity extends AppCompatActivity {
         pricetextview=(TextView) findViewById(R.id.price);
         productImageView=(ImageView) findViewById(R.id.card_image);
         ivback=(ImageView)findViewById(R.id.iv_back2);
+        ivshare=(ImageView)findViewById(R.id.img_share);
 
         ivback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,15 @@ public class PreviewActivity extends AppCompatActivity {
                 i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i1);
                 finish();
+            }
+        });
+
+        ivshare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareintent=new Intent();
+                shareintent.setAction(Intent.ACTION_SEND);
+                startActivity(Intent.createChooser(shareintent," "));
             }
         });
 

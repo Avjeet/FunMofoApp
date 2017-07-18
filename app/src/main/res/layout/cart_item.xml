@@ -7,7 +7,6 @@
     android:id="@+id/cv"
     app:cardElevation="3.5sp"
     android:layout_margin="5sp"
-    app:cardCornerRadius="5dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
@@ -23,7 +22,7 @@
             android:orientation="horizontal">
             <ImageView
                 android:layout_width="80dp"
-                android:id="@+id/img2"
+                android:id="@+id/image2"
                 android:src="@drawable/pic1"
                 android:layout_height="80dp"
                 />
@@ -33,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
                     android:layout_marginLeft="7dp"
-                    android:id="@+id/tvName"
+                    android:id="@+id/tv_Name"
                     android:textColor="@color/black"
                     android:layout_marginTop="5dp"
                     android:text="Durex"/>
@@ -51,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rs. 60"
-            android:id="@+id/tvPrice"
+            android:id="@+id/tv_Price"
             android:textSize="18dp"
             android:layout_marginRight="7dp"
             android:textColor="@color/blue"

@@ -58,6 +58,8 @@ public class MyOrderActivity extends AppCompatActivity {
                 R.drawable.pic8));
         ilist1.add(new Item2("Placed On: 10 May,2017","Order Id:189704842900","Skins","Rs. 90",
                 R.drawable.pic6));
+        ilist1.add(new Item2("Placed On: 2 April,2017","Order Id:168204842900","24 Assorted","Rs. 100",
+                R.drawable.pic4));
 
         ongoingadapter=new OngoingOrderItemAdapter(ilist);
         rv_ongoing_orders.setAdapter(ongoingadapter);

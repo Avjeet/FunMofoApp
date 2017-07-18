@@ -20,14 +20,10 @@ import com.example.acer.funmofoapp.R;
 
 import java.util.List;
 
-/**
- * Created by AVJEET on 08-07-2017.
- */
-
 public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItemAdapter.MyViewHolder> {
 
     public List<Product> itemList;
-
+    Product p;
     private String tag;
     private View itemView;
     private Context context;
@@ -52,25 +48,39 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
             this.priceTextView=(TextView) itemView.findViewById(R.id.product_price);
             this.oldPriceTextView=(TextView) itemView.findViewById(R.id.product_price_old);
             this.itemLayout=(LinearLayout) itemView.findViewById(R.id.item_layout);
+
             itemLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int currentPos = (int)view.getTag();
+                    final int currentPos = (int)view.getTag();
                     currentProduct=itemList.get(currentPos);
+
                     Intent detailActivityIntent = new Intent(context, PreviewActivity.class);
                     ActivityOptionsCompat optionCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,itemView.findViewById(R.id.product_img),"productImage");
 
                     Bundle data = new Bundle();
                     data.putString("name",currentProduct.getProductName());
-                    //data.putString("price",currentProduct.getProductName());
                     data.putString("price",currentProduct.getPrice());
                     data.putString("old price",currentProduct.getOldPrice());
                     data.putInt("imageID",currentProduct.getImageID());
                     detailActivityIntent.putExtras(data);
                     context.startActivity(detailActivityIntent,optionCompat.toBundle());
+//
+//                    itemList.add(currentPos,p);
+//                    notifyItemInserted(currentPos);
+//                    notifyItemRangeChanged(currentPos,itemList.size());
+
+//                    if (tag=="top")
+//                    {
+//                        itemList.add(0,p);
+//                        notifyItemInserted(0);
+//                        notifyItemRangeChanged(0,itemList.size());
+//                    }
+
                 }
             });
         }
+
 
     }
 
@@ -80,7 +90,8 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
         if(tag=="recent"){
             itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recently_viewed_item,parent,false);
         }else{
-            itemView =  LayoutInflater.from(parent.getContext()).inflate(R.layout.top_product_list_item,parent,false);
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.top_product_list_item,parent,false);
+
         }
 
         return new MyViewHolder(itemView);
@@ -95,6 +106,22 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
             holder.oldPriceTextView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             holder.oldPriceTextView.setText(itemList.get(position).getOldPrice());
         }
+
+
+
+    /*    holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(tag=="top")
+                {
+                    itemList.add(0,p);
+                    notifyItemInserted(0);
+                    notifyItemRangeChanged(0,itemList.size());
+                }
+
+            }
+        });*/
+
         holder.itemLayout.setTag(position);
     }
 
@@ -102,8 +129,6 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
     public int getItemCount() {
         return itemList.size();
     }
-
-
 
 }
 

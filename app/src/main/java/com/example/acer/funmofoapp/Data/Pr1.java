@@ -1,32 +1,20 @@
 package com.example.acer.funmofoapp.Data;
 
-public class CartProduct {
+
+public class Pr1 {
+    public static final int card1=0;
+    public static final int card2=1;
     private int imageID;
-    private String productName;
-    private String price;
+    private String productName,price;
 
+    public Pr1(int imageID, String productName, String price) {
 
-    public CartProduct(int imageID, String productName, String price) {
         this.imageID = imageID;
         this.productName = productName;
         this.price = price;
 
+
     }
-
-    public int getImageID() {
-        return imageID;
-    }
-
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-
 
     public void setImageID(int imageID) {
         this.imageID = imageID;
@@ -40,5 +28,17 @@ public class CartProduct {
         this.price = price;
     }
 
+    public int getImageID() {
+
+        return imageID;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getPrice() {
+        return price;
+    }
 
 }

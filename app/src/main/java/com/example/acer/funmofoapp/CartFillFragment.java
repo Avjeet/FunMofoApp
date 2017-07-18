@@ -9,7 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.acer.funmofoapp.Adapters.CartViewItemAdapter;
+
+import com.example.acer.funmofoapp.Adapters.WishlistViewItemAdapter;
 import com.example.acer.funmofoapp.Data.CartProduct;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 public class CartFillFragment extends Fragment {
     private RecyclerView rvCart;
     private ArrayList<CartProduct> list;
-    private CartViewItemAdapter cartAdapter;
+    private WishlistViewItemAdapter cartAdapter;
 
 
     public CartFillFragment() {
@@ -45,14 +46,14 @@ public class CartFillFragment extends Fragment {
         list=new ArrayList<>();
         list.add(new CartProduct(R.drawable.pic1,
                 "Durex","Rs. 60"));
-        list.add(new CartProduct(R.drawable.pic2,
+        list.add(new CartProduct(R.drawable.pic10,
                 "Skore","Rs. 80"));
         list.add(new CartProduct(R.drawable.pic2,
                 "Manforce","Rs. 90"));
-        list.add(new CartProduct(R.drawable.pic2,
+        list.add(new CartProduct(R.drawable.pic4,
                 "Assorted","Rs. 90"));
 
-        cartAdapter=new CartViewItemAdapter(list);
+        cartAdapter=new WishlistViewItemAdapter(list,"cart");
         rvCart.setAdapter(cartAdapter);
         rvCart.setLayoutManager(new LinearLayoutManager(getActivity()));
 
