@@ -13,4 +13,6 @@
     <string name="top_products">Top Products</string>
     <string name="recently_viewed">Recently Viewed</string>
     <string name="buy_now">BUY NOW</string>
+    <string name="support">Support</string>
+    <string name="cart">Cart</string>
 </resources>

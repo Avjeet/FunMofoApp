@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import com.example.acer.funmofoapp.Adapters.BannerViewPagerAdapter;
 import com.example.acer.funmofoapp.Adapters.ProductViewItemAdapter;
 import com.example.acer.funmofoapp.Data.Product;
+import com.github.clans.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public class HomeFragment extends Fragment {
     private ArrayList<Product> topProductsList;
     private ProductViewItemAdapter topProductItemAdapter;
     private RecyclerView topProductRecycler;
-    private int offset=2;
+
 
 
     public HomeFragment() {
