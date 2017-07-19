@@ -1,23 +1,32 @@
 package com.example.acer.funmofoapp.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.acer.funmofoapp.Data.CartProduct;
+import com.example.acer.funmofoapp.PreviewActivity;
 import com.example.acer.funmofoapp.R;
+
 import java.util.List;
 
 public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewItemAdapter.ItemViewHolder> {
 
     private String tag;
     private View myview;
+
     public List<CartProduct> list;
     public Context context;
+
 
     public WishlistViewItemAdapter(List<CartProduct> list,String tag){
         this.list=list;
@@ -28,8 +37,9 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
 
         public ImageView ivPic,ivshare,ivdelete,imclose;
         public TextView name,price;
-
-        public ItemViewHolder(View itemView) {
+        private CardView card_view;
+        private CartProduct cp;
+        public ItemViewHolder( final View itemView) {
             super(itemView);
             ivPic= (ImageView) itemView.findViewById(R.id.image2);
             name= (TextView) itemView.findViewById(R.id.tv_Name);
@@ -37,6 +47,9 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             ivshare=(ImageView)itemView.findViewById(R.id.iv_share);
             ivdelete=(ImageView)itemView.findViewById(R.id.iv_delete);
             imclose=(ImageView)itemView.findViewById(R.id.imClose);
+            card_view= (CardView) itemView.findViewById(R.id.card_view);
+
+
         }
     }
 
@@ -55,7 +68,7 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
     }
 
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, final int position) {
+    public void onBindViewHolder(final ItemViewHolder holder, final int position) {
 
         switch (tag)
         {
@@ -101,6 +114,26 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
                 });
                 break;
         }
+
+            holder.card_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent i1=new Intent(context, PreviewActivity.class);
+                ActivityOptionsCompat optionCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,holder.ivPic,"productImage");
+                Bundle data=new Bundle();
+                data.putInt("imageID", list.get(position).getImageID());
+                data.putString("name",list.get(position).getProductName());
+                data.putString("price",list.get(position).getPrice());
+                i1.putExtras(data);
+                context.startActivity(i1,optionCompat.toBundle());
+
+
+            }
+        });
+
+        holder.card_view.setTag(position);
     }
 
     @Override
