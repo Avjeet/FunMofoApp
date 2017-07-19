@@ -49,26 +49,7 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             imclose=(ImageView)itemView.findViewById(R.id.imClose);
             card_view= (CardView) itemView.findViewById(R.id.card_view);
 
-            card_view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
 
-                  //  Toast.makeText(context, "Image clicked", Toast.LENGTH_SHORT).show();
-                    final int current= (int) view.getTag();
-                    cp=list.get(current);
-
-                    Intent i1=new Intent(context, PreviewActivity.class);
-                    ActivityOptionsCompat optionCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,itemView.findViewById(R.id.image2),"productImage");
-                    Bundle data=new Bundle();
-                    data.putInt("imageID", cp.getImageID());
-                    data.putString("name",cp.getProductName());
-                    data.putString("price",cp.getPrice());
-                    i1.putExtras(data);
-                    context.startActivity(i1,optionCompat.toBundle());
-
-
-                }
-            });
         }
     }
 
@@ -87,7 +68,7 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
     }
 
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, final int position) {
+    public void onBindViewHolder(final ItemViewHolder holder, final int position) {
 
         switch (tag)
         {
@@ -133,6 +114,24 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
                 });
                 break;
         }
+
+            holder.card_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent i1=new Intent(context, PreviewActivity.class);
+                ActivityOptionsCompat optionCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,holder.ivPic,"productImage");
+                Bundle data=new Bundle();
+                data.putInt("imageID", list.get(position).getImageID());
+                data.putString("name",list.get(position).getProductName());
+                data.putString("price",list.get(position).getPrice());
+                i1.putExtras(data);
+                context.startActivity(i1,optionCompat.toBundle());
+
+
+            }
+        });
 
         holder.card_view.setTag(position);
     }
