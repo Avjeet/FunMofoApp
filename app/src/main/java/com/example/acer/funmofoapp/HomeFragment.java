@@ -1,6 +1,5 @@
 package com.example.acer.funmofoapp;
 
-
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -26,12 +25,10 @@ import com.github.clans.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
-
 
     private ViewPager viewPager;
     private BannerViewPagerAdapter imageViewPagerAdapter;
@@ -42,6 +39,8 @@ public class HomeFragment extends Fragment {
     private CountDownTimer timer;
 
     private RelativeLayout rlMore;
+
+
 
     private RecyclerView recentlyViewRecycler;
     private ProductViewItemAdapter productItemAdapter;
@@ -63,6 +62,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         rlMore= (RelativeLayout) view.findViewById(R.id.rlMore);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         dotTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
@@ -72,11 +72,11 @@ public class HomeFragment extends Fragment {
         rlMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 FragmentManager mgr=getActivity().getSupportFragmentManager();
                 FragmentTransaction trans=mgr.beginTransaction();
                 trans.replace(R.id.fragment,new TopFragment());
                 trans.commit();
-
             }
         });
 

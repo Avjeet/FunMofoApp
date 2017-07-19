@@ -16,4 +16,12 @@
         app:showAsAction="always"
         >
     </item>
+
+    <item
+        android:id="@+id/wishlist"
+        android:title=""
+        android:icon="@drawable/ic_wishlist"
+        app:showAsAction="always"
+        >
+    </item>
 </menu>

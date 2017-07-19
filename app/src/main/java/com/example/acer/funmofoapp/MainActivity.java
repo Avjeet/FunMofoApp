@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tvtitle=(TextView)findViewById(R.id.tv_title);
+
         notifyTextBadge=(TextView) findViewById(R.id.notify_no);
 
 
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -132,15 +134,26 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
+        FragmentManager mgr=getSupportFragmentManager();
+        FragmentTransaction trans=mgr.beginTransaction();
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-      /*  if (id == R.id.action_settings) {
-            return true;
-        }*/
+         if (id == R.id.cart) {
+             tvtitle.setText("Cart");
+              trans.replace(R.id.fragment,new CartFillFragment());
+              trans.commit();
+        }
+        else
+            if(id==R.id.wishlist)
+            {
+                tvtitle.setText("Wishlist");
+              trans.replace(R.id.fragment,new WishlistFillFragment());
+              trans.commit();
+            }
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -167,8 +180,6 @@ public class MainActivity extends AppCompatActivity
 
 
         }
-        //else if (id == R.id.New) {
-        //}
 
         else if (id == R.id.wishlist2) {
             tvtitle.setText("Wishlist");
