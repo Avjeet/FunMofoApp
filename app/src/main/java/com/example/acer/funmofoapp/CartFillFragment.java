@@ -1,16 +1,14 @@
 package com.example.acer.funmofoapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 
 import com.example.acer.funmofoapp.Adapters.WishlistViewItemAdapter;
 import com.example.acer.funmofoapp.Data.CartProduct;
@@ -21,7 +19,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CartFillFragment extends Fragment {
+public class CartFillFragment extends BaseFragment {
     private RecyclerView rvCart;
     private ArrayList<CartProduct> list;
     private WishlistViewItemAdapter cartAdapter;
@@ -59,6 +57,14 @@ public class CartFillFragment extends Fragment {
         rvCart.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        Intent i1=new Intent(getContext(),MainActivity.class);
+        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i1);
+        return true;
     }
 
 }

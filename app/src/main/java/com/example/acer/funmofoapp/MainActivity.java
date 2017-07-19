@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity
@@ -115,18 +116,13 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
-//        else
-//            if(getFragmentManager().getBackStackEntryCount()>0){
-//                tvtitle.setText(" ");
-//                trans.replace(R.id.fragment,new HomeFragment());
-//                trans.commit();
-//        }
+
         else{
                 //  super.onBackPressed();
                 new android.app.AlertDialog.Builder(this)
@@ -141,7 +137,49 @@ public class MainActivity extends AppCompatActivity
                         }).create().show();
             }
 
+    }*/
+
+
+
+    @Override
+    public void onBackPressed() {
+
+        List fragmentList = getSupportFragmentManager().getFragments();
+
+        boolean handled = false;
+        for(Object f : fragmentList) {
+            if(f instanceof BaseFragment) {
+                handled = ((BaseFragment)f).onBackPressed();
+
+                if(handled) {
+                    break;
+                }
+            }
+        }
+
+        if(!handled) {
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+
+            else{
+                //  super.onBackPressed();
+                new android.app.AlertDialog.Builder(this)
+                        .setMessage("Are you really want to exit ??")
+                        .setNegativeButton("CANCEL", null)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                MainActivity.super.onBackPressed();
+                                finish();
+                            }
+                        }).create().show();
+            }
+        }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

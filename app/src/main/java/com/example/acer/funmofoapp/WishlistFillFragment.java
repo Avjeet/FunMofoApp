@@ -1,6 +1,7 @@
 package com.example.acer.funmofoapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class WishlistFillFragment extends Fragment {
+public class WishlistFillFragment extends BaseFragment {
 
     private ArrayList<CartProduct> list;
     private WishlistViewItemAdapter wishlistAdapter;
@@ -58,6 +59,14 @@ public class WishlistFillFragment extends Fragment {
         rvWishlist.setLayoutManager(new GridLayoutManager(getActivity(),2));
 
 
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        Intent i1=new Intent(getContext(),MainActivity.class);
+        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i1);
+        return true;
     }
 
 }
