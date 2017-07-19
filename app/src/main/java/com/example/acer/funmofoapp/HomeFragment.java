@@ -1,6 +1,5 @@
 package com.example.acer.funmofoapp;
 
-
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -25,12 +24,10 @@ import com.example.acer.funmofoapp.Data.Product;
 
 import java.util.ArrayList;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
-
 
     private ViewPager viewPager;
     private BannerViewPagerAdapter imageViewPagerAdapter;

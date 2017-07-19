@@ -6,10 +6,7 @@
             android:id="@+id/home"
             android:icon="@drawable/ic_home"
             android:title="Home" />
-        <item
-            android:id="@+id/about"
-            android:icon="@drawable/ic_about"
-            android:title="About us" />
+
         <item
             android:id="@+id/top"
             android:icon="@drawable/ic_top"
@@ -36,9 +33,16 @@
             android:title="My Orders" />
 
         <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_about"
+            android:title="About us" />
+
+        <item
             android:id="@+id/contact_us"
             android:icon="@drawable/ic_contact"
             android:title="Contact us" />
+
+
     </group>
 
     <item android:title="Settings">
