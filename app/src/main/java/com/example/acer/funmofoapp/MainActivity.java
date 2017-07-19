@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         tvtitle=(TextView)findViewById(R.id.tv_title);
+        tvtitle.setText(" ");
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
