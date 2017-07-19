@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextView tvtitle;
+    FragmentTransaction trans;
+    FragmentManager mgr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,8 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        FragmentManager mgr=getSupportFragmentManager();
-        FragmentTransaction trans=mgr.beginTransaction();
+         mgr=getSupportFragmentManager();
+        trans=mgr.beginTransaction();
         trans.replace(R.id.fragment,new HomeFragment());
         trans.commit();
 
@@ -68,19 +70,27 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-          //  super.onBackPressed();
-            new android.app.AlertDialog.Builder(this)
-                    .setMessage("Are you really want to exit ??")
-                    .setNegativeButton("CANCEL", null)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            MainActivity.super.onBackPressed();
-                            finish();
-                        }
-                    }).create().show();
         }
+//        else
+//            if(getFragmentManager().getBackStackEntryCount()>0){
+//                tvtitle.setText(" ");
+//                trans.replace(R.id.fragment,new HomeFragment());
+//                trans.commit();
+//        }
+        else{
+                //  super.onBackPressed();
+                new android.app.AlertDialog.Builder(this)
+                        .setMessage("Are you really want to exit ??")
+                        .setNegativeButton("CANCEL", null)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                MainActivity.super.onBackPressed();
+                                finish();
+                            }
+                        }).create().show();
+            }
+
     }
 
     @Override
@@ -102,6 +112,7 @@ public class MainActivity extends AppCompatActivity
          if (id == R.id.cart) {
              tvtitle.setText("Cart");
               trans.replace(R.id.fragment,new CartFillFragment());
+             trans.addToBackStack(null);
               trans.commit();
         }
         else
