@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity
 
     private TextView tvtitle;
     FragmentTransaction trans;
-    FragmentManager mgr;
-
     private FragmentManager mgr;
 
     private FloatingActionButton productTrckbtn;
