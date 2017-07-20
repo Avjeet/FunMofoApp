@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
     private FloatingActionButton productTrckbtn;
 
     private CountDownTimer timer;
-    private FloatingActionMenu productCartMenu;
+
     private TextView notifyTextBadge;
 
     @Override
@@ -73,15 +73,8 @@ public class MainActivity extends AppCompatActivity
         trans.replace(R.id.fragment,new HomeFragment());
         trans.commit();
 
-        productCartMenu= (FloatingActionMenu) findViewById(R.id.flt_cart_menu);
-        productTrckbtn=(FloatingActionButton) findViewById(R.id.fltrack);
 
-        productCartMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                notifyTextBadge.setVisibility(View.GONE);
-            }
-        });
+        productTrckbtn=(FloatingActionButton) findViewById(R.id.fltrack);
 
 
 
