@@ -3,6 +3,7 @@ package com.example.acer.funmofoapp.Adapters;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,6 +59,7 @@ public class OngoingOrderItemAdapter extends RecyclerView.Adapter<OngoingOrderIt
 
         public TextView tvorderdate,tvorderid,tvproductname,tvexpectedtime,tvprice,tvtraceorder;
         public ImageView image;
+        public CardView card;
 
         public ItemViewHolder1(View itemView) {
             super(itemView);
@@ -69,8 +71,10 @@ public class OngoingOrderItemAdapter extends RecyclerView.Adapter<OngoingOrderIt
             tvprice=(TextView)itemView.findViewById(R.id.tv_price);
             tvtraceorder=(TextView)itemView.findViewById(R.id.tv_trace_order);
             image=(ImageView)itemView.findViewById(R.id.iv_product);
+            card=(CardView) itemView.findViewById(R.id.ongoing_delivered);
 
-            tvtraceorder.setOnClickListener(new View.OnClickListener() {
+
+            card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i1=new Intent(context, OrderTrackingActivity.class);
