@@ -2,6 +2,7 @@ package com.example.acer.funmofoapp.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,10 +52,12 @@ public class DeliveredOrderItemAdapter extends RecyclerView.Adapter<DeliveredOrd
     public int getItemCount() {
         return ilist.size();
     }
+
     public class ItemViewHolder2 extends RecyclerView.ViewHolder {
 
         public TextView tvorderdate1, tvorderid1, tvproductname1, tvprice1, tvdelivered;
         public ImageView image1, image_next;
+        public CardView card;
 
         public ItemViewHolder2(View itemView) {
             super(itemView);
@@ -66,8 +69,9 @@ public class DeliveredOrderItemAdapter extends RecyclerView.Adapter<DeliveredOrd
             tvdelivered = (TextView) itemView.findViewById(R.id.tv_delivered);
             image1 = (ImageView) itemView.findViewById(R.id.iv_product1);
             image_next = (ImageView) itemView.findViewById(R.id.iv_next);
+            card=(CardView)itemView.findViewById(R.id.delivered_card);
 
-            image_next.setOnClickListener(new View.OnClickListener() {
+            card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i1=new Intent(context, OrderDetails.class);
