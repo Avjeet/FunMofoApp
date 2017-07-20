@@ -63,10 +63,11 @@ public class WishlistFillFragment extends BaseFragment {
 
     @Override
     public boolean onBackPressed() {
-        Intent i1=new Intent(getContext(),MainActivity.class);
-        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(i1);
-        return true;
+//        Intent i1=new Intent(getContext(),MainActivity.class);
+//        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(i1);
+
+        return false;
     }
 
 }
