@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+
 
     <android.support.v7.widget.CardView
+    android:id="@+id/ongoing_delivered"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:layout_marginBottom="3.5dp"
@@ -28,7 +26,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
                     android:textColor="@color/grey"
-                    android:text="Placed On: 6 July,2017"
+                    android:text="Placed On: 6 Jul'17"
                     android:textSize="14dp"
                     android:id="@+id/tv_order_placed_date" />
 
@@ -42,7 +40,7 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/grey"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="14dp" />
+                    android:layout_marginEnd="10dp" />
             </RelativeLayout>
             <View
                 android:layout_width="match_parent"
@@ -122,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:text="TRACE ORDER"
                 android:textSize="13dp"
-                android:gravity="right"
+                android:gravity="right|center_vertical"
                 android:id="@+id/tv_trace_order"
                 android:layout_marginTop="14dp"
                 android:layout_below="@id/rl4"
@@ -132,4 +130,3 @@
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-</LinearLayout>

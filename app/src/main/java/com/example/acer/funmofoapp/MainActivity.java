@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
     private FloatingActionButton productTrckbtn;
 
     private CountDownTimer timer;
-    private FloatingActionMenu productCartMenu;
+
     private TextView notifyTextBadge;
 
     @Override
@@ -66,18 +66,18 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-         mgr=getSupportFragmentManager();
+        mgr=getSupportFragmentManager();
         trans=mgr.beginTransaction();
         trans.replace(R.id.fragment,new HomeFragment());
+        trans.addToBackStack("Home");
         trans.commit();
 
-        productCartMenu= (FloatingActionMenu) findViewById(R.id.flt_cart_menu);
-        productTrckbtn=(FloatingActionButton) findViewById(R.id.fltrack);
 
-        productCartMenu.setOnClickListener(new View.OnClickListener() {
+        productTrckbtn=(FloatingActionButton) findViewById(R.id.fltrack);
+        productTrckbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                notifyTextBadge.setVisibility(View.GONE);
+
             }
         });
 
@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity
 
             }
         };
+
     }
 
     @Override
@@ -152,23 +153,27 @@ public class MainActivity extends AppCompatActivity
         }
 
         if(!handled) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            if (drawer.isDrawerOpen(GravityCompat.START)) {
-                drawer.closeDrawer(GravityCompat.START);
-            }
+            if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                getSupportFragmentManager().popBackStack("Home",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new HomeFragment()).commit();
+            } else {
 
-            else{
-                //  super.onBackPressed();
-                new android.app.AlertDialog.Builder(this)
-                        .setMessage("Are you really want to exit ??")
-                        .setNegativeButton("CANCEL", null)
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                if (drawer.isDrawerOpen(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                } else {
+                    //  super.onBackPressed();
+                    new android.app.AlertDialog.Builder(this)
+                            .setMessage("Are you really want to exit ??")
+                            .setNegativeButton("CANCEL", null)
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
-                            public void onClick(DialogInterface arg0, int arg1) {
-                                MainActivity.super.onBackPressed();
-                                finish();
-                            }
-                        }).create().show();
+                                public void onClick(DialogInterface arg0, int arg1) {
+                                    MainActivity.super.onBackPressed();
+                                    finish();
+                                }
+                            }).create().show();
+                }
             }
         }
     }
@@ -193,6 +198,7 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
          if (id == R.id.cart) {
              tvtitle.setText("Cart");
+
               trans.replace(R.id.fragment,new CartFillFragment());
              trans.addToBackStack(null);
               trans.commit();
@@ -202,6 +208,7 @@ public class MainActivity extends AppCompatActivity
             {
                 tvtitle.setText("Wishlist");
               trans.replace(R.id.fragment,new WishlistFillFragment());
+                trans.addToBackStack(null);
               trans.commit();
             }
 
@@ -235,6 +242,7 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.wishlist2) {
             tvtitle.setText("Wishlist");
             trans.replace(R.id.fragment,new WishlistFillFragment());
+            trans.addToBackStack(null);
             trans.commit();
 
         } else if (id == R.id.cart2) {
@@ -242,33 +250,34 @@ public class MainActivity extends AppCompatActivity
             tvtitle.setText("Cart");
 
             trans.replace(R.id.fragment,new CartFillFragment());
+            trans.addToBackStack(null);
             trans.commit();
 
         } else if(id == R.id.orders){
             Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
-            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-            finish();
+//            finish();
 
         } else if(id == R.id.contact_us){
 
         } else if(id == R.id.account){
             Intent i1=new Intent(MainActivity.this,MyAccountActivity.class);
-            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-            finish();
+//            finish();
 
         } else if(id == R.id.password){
             Intent i1=new Intent(MainActivity.this,ChangePasswordActivity.class);
-            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-            finish();
+//            finish();
 
         } else if(id == R.id.logout){
             Intent i1=new Intent(MainActivity.this,SignInActivity.class);
-            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-            finish();
+//            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

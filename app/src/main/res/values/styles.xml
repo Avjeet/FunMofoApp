@@ -18,6 +18,14 @@
         <item name="android:background">@drawable/rounded_border</item>
     </style>
 
+    <style name="MenuButtonsSmall">
+        <item name="fab_size">normal</item>
+        <item name="fab_colorNormal">#1565C0</item>
+        <item name="fab_colorPressed">#2272CD</item>
+        <item name="fab_colorRipple">#62B2FF</item>
+        <!--<item name="fab_show_shadow">true</item>-->
+    </style>
+
     <style name="MyRadioButton" parent="Theme.AppCompat.Light">
         <item name="colorControlActivated">@color/green</item>
         <item name="colorControlNormal">@color/black</item>
