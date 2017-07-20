@@ -35,13 +35,8 @@ public class HomeFragment extends Fragment {
     private TabLayout dotTabLayout;
     private ArrayList<Integer> bannerImagesID;
     private int currentPos = 1;
-
     private CountDownTimer timer;
-
     private RelativeLayout rlMore;
-
-
-
     private RecyclerView recentlyViewRecycler;
     private ProductViewItemAdapter productItemAdapter;
     private ArrayList<Product> productList;
