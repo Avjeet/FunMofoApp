@@ -71,6 +71,7 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/ic_add_circle"/>
             <TextView
+                android:id="@+id/tv_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"

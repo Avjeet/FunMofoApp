@@ -45,14 +45,11 @@ public class CartFillFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         list=new ArrayList<>();
-        list.add(new CartProduct(R.drawable.pic1,
-                "Durex","Rs. 60"));
+
         list.add(new CartProduct(R.drawable.pic10,
                 "Skore","Rs. 80"));
         list.add(new CartProduct(R.drawable.pic2,
                 "Manforce","Rs. 90"));
-        list.add(new CartProduct(R.drawable.pic4,
-                "Assorted","Rs. 90"));
 
         cartAdapter=new WishlistViewItemAdapter(list,"cart");
         rvCart.setAdapter(cartAdapter);
