@@ -1,5 +1,6 @@
 package com.example.acer.funmofoapp.Adapters;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,7 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
 
     private String tag;
     private View myview;
+    static int count=1;
 
     public List<CartProduct> list;
     public Context context;
@@ -35,10 +37,10 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
 
-        public ImageView ivPic,ivshare,ivdelete,imclose;
-        public TextView name,price;
+        public ImageView ivPic,ivshare,ivdelete,imclose ,imPlus,imMinus;
+        public TextView name,price,count;
         private CardView card_view;
-        private CartProduct cp;
+
         public ItemViewHolder( final View itemView) {
             super(itemView);
             ivPic= (ImageView) itemView.findViewById(R.id.image2);
@@ -48,8 +50,9 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             ivdelete=(ImageView)itemView.findViewById(R.id.iv_delete);
             imclose=(ImageView)itemView.findViewById(R.id.imClose);
             card_view= (CardView) itemView.findViewById(R.id.card_view);
-
-
+            imPlus=(ImageView)itemView.findViewById(R.id.imPlus);
+            imMinus=(ImageView)itemView.findViewById(R.id.imMinus);
+            count=(TextView)itemView.findViewById(R.id.tv_count);
         }
     }
 
@@ -110,6 +113,24 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
                         list.remove(position);
                         notifyItemRemoved(position);
                         notifyItemRangeChanged(position,list.size());
+                    }
+                });
+
+                holder.imPlus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                       // count=count+1;
+                        //holder.count.setText(count);
+
+
+                    }
+                });
+
+                holder.imMinus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        count=count-1;
+                        holder.count.setText(count);
                     }
                 });
                 break;
