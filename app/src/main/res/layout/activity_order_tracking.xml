@@ -128,11 +128,28 @@
 
        <LinearLayout
            android:layout_width="match_parent"
-           android:layout_height="180dp"
+           android:layout_height="wrap_content"
            android:id="@+id/linearLayout3"
            android:layout_below="@id/linearLayout2"
            android:orientation="vertical"
            >
+           <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:checked="false"
+               android:text="Order Recieved"
+               android:textSize="18dp"
+               android:paddingLeft="20dp"
+               android:layout_marginTop="25dp"
+               android:layout_marginLeft="20dp"
+               android:textColor="@color/dialog_bg"
+               android:theme="@style/MyRadioButton"/>
+
+           <View
+               android:layout_width="2dp"
+               android:layout_height="20dp"
+               android:background="@color/dialog_bg"
+               android:layout_marginLeft="36dp"/>
 
            <RadioButton
                android:layout_width="wrap_content"
@@ -141,7 +158,6 @@
                android:text="Order Confirmed"
                android:textSize="18dp"
                android:paddingLeft="20dp"
-               android:layout_marginTop="25dp"
                android:layout_marginLeft="20dp"
                android:textColor="@color/dialog_bg"
                 android:theme="@style/MyRadioButton"/>
@@ -151,6 +167,7 @@
                android:layout_height="20dp"
                android:background="@color/dialog_bg"
                android:layout_marginLeft="36dp"/>
+
 
            <RadioButton
                android:layout_width="wrap_content"
@@ -185,7 +202,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="370dp"
+                android:layout_marginTop="400dp"
                 android:text="Shipping via : xyz courier"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/black"
@@ -195,7 +212,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="430dp"
             android:id="@+id/tv_expected_time"
             android:text="Expected Delivery Time : 20 mins"
             android:textSize="20dp"
