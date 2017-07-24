@@ -66,11 +66,12 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:id="@+id/imPlus"
+                android:id="@+id/imMinus"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/ic_add_circle"/>
-            <TextView
+                android:src="@drawable/ic_remove_circle"/>
+            <EditText
                 android:id="@+id/tv_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,10 +80,11 @@
                 android:textSize="18dp"/>
             <ImageView
                 android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/imMinus"
+                android:id="@+id/imPlus"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_remove_circle"/>
+                android:src="@drawable/ic_add_circle"/>
         </LinearLayout>
         <ImageView
             android:layout_width="wrap_content"

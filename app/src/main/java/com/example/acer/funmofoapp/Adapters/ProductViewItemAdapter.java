@@ -45,6 +45,7 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
             this.priceTextView=(TextView) itemView.findViewById(R.id.product_price);
             this.oldPriceTextView=(TextView) itemView.findViewById(R.id.product_price_old);
             this.itemLayout=(LinearLayout) itemView.findViewById(R.id.item_layout);
+
         }
     }
 
