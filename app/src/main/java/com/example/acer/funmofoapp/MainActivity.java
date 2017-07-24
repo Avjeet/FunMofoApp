@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-         mgr=getSupportFragmentManager();
+        mgr=getSupportFragmentManager();
         trans=mgr.beginTransaction();
         trans.replace(R.id.fragment,new HomeFragment());
         trans.addToBackStack("Home");
@@ -72,6 +72,12 @@ public class MainActivity extends AppCompatActivity
 
 
         productTrckbtn=(FloatingActionButton) findViewById(R.id.fltrack);
+        productTrckbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 
 
@@ -93,6 +99,7 @@ public class MainActivity extends AppCompatActivity
 
             }
         };
+
     }
 
     @Override
