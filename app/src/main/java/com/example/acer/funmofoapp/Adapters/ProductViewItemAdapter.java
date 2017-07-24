@@ -39,6 +39,7 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
 
         public MyViewHolder(final View itemView) {
             super(itemView);
+
             this.productImageView=(ImageView)itemView.findViewById(R.id.product_img);
             this.nameTextView=(TextView) itemView.findViewById(R.id.product_name);
             this.priceTextView=(TextView) itemView.findViewById(R.id.product_price);
