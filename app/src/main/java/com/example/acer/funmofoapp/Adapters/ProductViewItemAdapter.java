@@ -69,7 +69,6 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
 //                    itemList.add(currentPos,p);
 //                    notifyItemInserted(currentPos);
 //                    notifyItemRangeChanged(currentPos,itemList.size());
-
 //                    if (tag=="top")
 //                    {
 //                        itemList.add(0,p);

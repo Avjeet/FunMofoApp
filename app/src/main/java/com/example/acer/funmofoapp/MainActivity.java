@@ -15,12 +15,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -191,18 +189,16 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
          if (id == R.id.cart) {
              tvtitle.setText("Cart");
-
-              trans.replace(R.id.fragment,new CartFillFragment());
+             trans.replace(R.id.fragment,new CartFillFragment());
              trans.addToBackStack(null);
-              trans.commit();
+             trans.commit();
         }
         else
             if(id==R.id.wishlist)
-            {
-                tvtitle.setText("Wishlist");
-              trans.replace(R.id.fragment,new WishlistFillFragment());
+            {   tvtitle.setText("Wishlist");
+                trans.replace(R.id.fragment,new WishlistFillFragment());
                 trans.addToBackStack(null);
-              trans.commit();
+                trans.commit();
             }
 
 
@@ -219,7 +215,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.home) {
             tvtitle.setText(" ");
-           trans.replace(R.id.fragment,new HomeFragment());
+            trans.replace(R.id.fragment,new HomeFragment());
             trans.commit();
 
         } else if (id == R.id.about) {
@@ -227,6 +223,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.top) {
             tvtitle.setText("Top Products");
             trans.replace(R.id.fragment,new TopFragment());
+            trans.addToBackStack(null);
             trans.commit();
 
 
@@ -241,7 +238,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.cart2) {
 
             tvtitle.setText("Cart");
-
             trans.replace(R.id.fragment,new CartFillFragment());
             trans.addToBackStack(null);
             trans.commit();
