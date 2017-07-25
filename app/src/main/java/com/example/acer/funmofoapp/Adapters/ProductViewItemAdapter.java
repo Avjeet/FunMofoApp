@@ -1,11 +1,7 @@
 package com.example.acer.funmofoapp.Adapters;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Paint;
-import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.acer.funmofoapp.Data.Product;
-import com.example.acer.funmofoapp.PreviewActivity;
 import com.example.acer.funmofoapp.R;
 
 import java.util.List;
@@ -39,13 +34,11 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
 
         public MyViewHolder(final View itemView) {
             super(itemView);
-
             this.productImageView=(ImageView)itemView.findViewById(R.id.product_img);
             this.nameTextView=(TextView) itemView.findViewById(R.id.product_name);
             this.priceTextView=(TextView) itemView.findViewById(R.id.product_price);
             this.oldPriceTextView=(TextView) itemView.findViewById(R.id.product_price_old);
             this.itemLayout=(LinearLayout) itemView.findViewById(R.id.item_layout);
-
         }
     }
 
@@ -56,7 +49,7 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
         if(tag=="recent"){
             itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recently_viewed_item,parent,false);
         }else{
-            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.top_product_list_item,parent,false);
+            itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recently_viewed_item,parent,false);
 
         }
         return new MyViewHolder(itemView);
