@@ -51,7 +51,10 @@
 
     </style>
 
+     <style name="ibstyle2">
+         <item name="android:background">@drawable/circular2</item>
 
+     </style>
 
 
 
