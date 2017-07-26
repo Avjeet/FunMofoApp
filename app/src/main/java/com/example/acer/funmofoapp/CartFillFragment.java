@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.acer.funmofoapp.Adapters.WishlistViewItemAdapter;
 import com.example.acer.funmofoapp.Data.CartProduct;
@@ -23,6 +26,7 @@ public class CartFillFragment extends BaseFragment {
     private RecyclerView rvCart;
     private ArrayList<CartProduct> list;
     private WishlistViewItemAdapter cartAdapter;
+    private Button btnproceed;
 
     public CartFillFragment() {
         // Required empty public constructor
@@ -34,7 +38,7 @@ public class CartFillFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart_fill, container, false);
         rvCart= (RecyclerView) view.findViewById(R.id.rvCart);
-
+        btnproceed=(Button)view.findViewById(R.id.btn_proceed);
         return view;
     }
 
@@ -43,6 +47,7 @@ public class CartFillFragment extends BaseFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         list=new ArrayList<>();
+
 
         list.add(new CartProduct(R.drawable.pic10,
                 "Skore","Rs. 80"));
@@ -53,7 +58,15 @@ public class CartFillFragment extends BaseFragment {
         rvCart.setAdapter(cartAdapter);
         rvCart.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
+        btnproceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager mgr=getActivity().getSupportFragmentManager();
+                FragmentTransaction trans=mgr.beginTransaction();
+                trans.replace(R.id.fragment,new CheckoutFragment());
+                trans.commit();
+            }
+        });
     }
 
     @Override

@@ -41,9 +41,14 @@
 
     </group>
 
-    <item android:title="Settings">
+    <item android:title=" ">
 
         <menu>
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings" />
+
             <item
                 android:id="@+id/account"
                 android:icon="@drawable/ic_account"

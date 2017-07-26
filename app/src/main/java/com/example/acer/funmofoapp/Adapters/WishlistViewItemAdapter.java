@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -54,9 +55,6 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             imPlus=(ImageView)itemView.findViewById(R.id.imPlus);
             imMinus=(ImageView)itemView.findViewById(R.id.imMinus);
             etcount=(EditText) itemView.findViewById(R.id.tv_count);
-
-
-
 
         }
     }
@@ -159,7 +157,7 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             }
         });
 
-        holder.card_view.setTag(position);
+       // holder.card_view.setTag(position);
     }
 
     @Override

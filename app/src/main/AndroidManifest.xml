@@ -4,8 +4,8 @@
 
     <application
         android:allowBackup="true"
-        android:label="Fun Mofo"
         android:icon="@mipmap/ic_launcher"
+        android:label="Fun Mofo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -28,11 +28,7 @@
         <activity
             android:name=".SignInActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ForgotPasswordActivity"
@@ -50,7 +46,14 @@
             android:name=".PreviewActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".CheckoutActivity"></activity>
+
+        <activity android:name=".SettingsActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

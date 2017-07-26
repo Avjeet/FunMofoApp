@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.closeDrawer(GravityCompat.START);
                 } else {
-                    //  super.onBackPressed();
                     new android.app.AlertDialog.Builder(this)
                             .setMessage("Are you really want to exit ??")
                             .setNegativeButton("CANCEL", null)
@@ -252,29 +251,26 @@ public class MainActivity extends AppCompatActivity
 
         } else if(id == R.id.rl_orders){
             Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
-//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-//            finish();
 
         } else if(id == R.id.contact_us){
 
+        }
+        else if(id == R.id.settings){
+            Intent i1=new Intent(MainActivity.this,SettingsActivity.class);
+            startActivity(i1);
+
         } else if(id == R.id.account){
             Intent i1=new Intent(MainActivity.this,MyAccountActivity.class);
-//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-//            finish();
 
         } else if(id == R.id.password){
             Intent i1=new Intent(MainActivity.this,ChangePasswordActivity.class);
-//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-//            finish();
 
         } else if(id == R.id.logout){
             Intent i1=new Intent(MainActivity.this,SignInActivity.class);
-//            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
-//            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -285,6 +281,5 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-
     }
 }
