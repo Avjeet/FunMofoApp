@@ -70,6 +70,8 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.wishlist_item,parent,false);
         else if(tag=="cart")
             myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item,parent,false);
+        else
+            myview=LayoutInflater.from(parent.getContext()).inflate(R.layout.category_item_card,parent,false);
 
 
         return new ItemViewHolder(myview);
@@ -139,6 +141,13 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
                     }
                 });
                 break;
+                default:
+                holder.ivPic.setImageResource(list.get(position).getImageID());
+                holder.name.setText(list.get(position).getProductName());
+                holder.price.setText(list.get(position).getPrice());
+                break;
+
+
         }
 
             holder.card_view.setOnClickListener(new View.OnClickListener() {

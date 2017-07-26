@@ -228,7 +228,14 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.about) {
 
-        } else if (id == R.id.top) {
+        }
+        else if (id == R.id.category) {
+            tvtitle.setText("All Categories");
+            trans.replace(R.id.fragment,new CategoryFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+
+        }else if (id == R.id.top) {
             tvtitle.setText("Top Products");
             trans.replace(R.id.fragment,new TopFragment());
             trans.addToBackStack(null);

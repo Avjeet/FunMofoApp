@@ -55,12 +55,36 @@
                 android:layout_height="1dp"
                 android:background="@color/grey_vlight"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:background="@color/white"
-                android:id="@+id/categories"
+            <LinearLayout
                 android:layout_width="wrap_content"
+                android:background="@color/white"
                 android:layout_height="wrap_content"
-                />
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/allcategories"
+                    android:layout_height="100dp"
+                    android:src="@drawable/main4"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/grey_light"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"/>
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:background="@color/white"
+                        android:id="@+id/categories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+
+            </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -83,20 +107,21 @@
                     android:background="@color/white"
                     android:layout_height="wrap_content">
                     <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
                         <ImageView
                             android:layout_width="140dp"
                             android:layout_marginRight="20dp"
                             android:layout_height="140dp"
+                            android:layout_centerHorizontal="true"
                             android:id="@+id/menimage"
                             android:src="@drawable/menimage"/>
                         <TextView
                             android:textColor="@color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
                             android:padding="7dp"
+                            android:layout_centerHorizontal="true"
                             android:textSize="15dp"
                             android:layout_below="@+id/menimage"
                             android:text="Men's Product"/>
@@ -108,10 +133,11 @@
                     android:background="@color/white"
                     android:layout_height="wrap_content">
                     <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
                         <ImageView
                             android:layout_width="140dp"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginRight="20dp"
                             android:layout_height="140dp"
                             android:id="@+id/womenimage"
@@ -121,8 +147,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15dp"
+                            android:layout_centerHorizontal="true"
                             android:padding="7dp"
-                            android:layout_marginLeft="20dp"
                             android:layout_below="@+id/womenimage"
                             android:text="Women's Product"/>
                     </RelativeLayout>
@@ -183,26 +209,26 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rlMore"
-            android:background="@color/white"
-            android:gravity="center">
-            <TextView
-                android:background="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="More"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColor="@color/grey_dark"
-                android:drawableRight="@drawable/ic_keyboard_arrow_right_grey_24dp"
-                android:textAppearance="@style/Base.Theme.AppCompat.Light"
-                />
-        </RelativeLayout>
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/rlMore"-->
+            <!--android:background="@color/white"-->
+            <!--android:gravity="center">-->
+            <!--<TextView-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="More"-->
+                <!--android:textSize="16sp"-->
+                <!--android:gravity="center"-->
+                <!--android:paddingTop="10dp"-->
+                <!--android:paddingBottom="10dp"-->
+                <!--android:textColor="@color/grey_dark"-->
+                <!--android:drawableRight="@drawable/ic_keyboard_arrow_right_grey_24dp"-->
+                <!--android:textAppearance="@style/Base.Theme.AppCompat.Light"-->
+                <!--/>-->
+        <!--</RelativeLayout>-->
     </LinearLayout>
 
 

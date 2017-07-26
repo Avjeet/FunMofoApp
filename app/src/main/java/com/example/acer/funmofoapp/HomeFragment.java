@@ -15,7 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 
 import com.example.acer.funmofoapp.Adapters.BannerViewPagerAdapter;
 import com.example.acer.funmofoapp.Adapters.CategoryAdapter;
@@ -36,10 +36,10 @@ public class HomeFragment extends Fragment {
     private ArrayList<Integer> bannerImagesID;
     private int currentPos = 1;
     private CountDownTimer timer;
-    private RelativeLayout rlMore;
     private RecyclerView recentlyViewRecycler;
     private ProductViewItemAdapter productItemAdapter;
     private ArrayList<Product> productList;
+    private ImageView ivCategory;
 
     private ArrayList<Product> topProductsList;
     private ArrayList<Category>categoriesList;
@@ -60,20 +60,20 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        rlMore= (RelativeLayout) view.findViewById(R.id.rlMore);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         dotTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+        ivCategory= (ImageView) view.findViewById(R.id.allcategories);
         recentlyViewRecycler = (RecyclerView) view.findViewById(R.id.recently_view_recycler);
         topProductRecycler=(RecyclerView) view.findViewById(R.id.top_product_recycler);
         categoryRecycler= (RecyclerView) view.findViewById(R.id.categories);
 
-        rlMore.setOnClickListener(new View.OnClickListener() {
+        ivCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 FragmentManager mgr=getActivity().getSupportFragmentManager();
                 FragmentTransaction trans=mgr.beginTransaction();
-                trans.replace(R.id.fragment,new TopFragment());
+                trans.replace(R.id.fragment,new CategoryFragment());
                 trans.commit();
             }
         });
@@ -173,10 +173,9 @@ public class HomeFragment extends Fragment {
         // categories view list item
 
         categoriesList=new ArrayList<>();
-        categoriesList.add(new Category(R.drawable.image1,"List"));
-        categoriesList.add(new Category(R.drawable.image2,"Beauty"));
-        categoriesList.add(new Category(R.drawable.image3,"Care"));
-        categoriesList.add(new Category(R.drawable.image4,"Health"));
+        categoriesList.add(new Category(R.drawable.main1,"Condoms"));
+        categoriesList.add(new Category(R.drawable.main2,"Sanitary Pads"));
+        categoriesList.add(new Category(R.drawable.main3,"Sanitizers"));
         categoryAdapter=new CategoryAdapter(categoriesList);
 
         LinearLayoutManager horizontal3LayoutManager =new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);

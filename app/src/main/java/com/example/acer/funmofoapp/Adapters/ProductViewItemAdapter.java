@@ -1,7 +1,11 @@
 package com.example.acer.funmofoapp.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Paint;
+import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.acer.funmofoapp.Data.Product;
+import com.example.acer.funmofoapp.PreviewActivity;
 import com.example.acer.funmofoapp.R;
 
 import java.util.List;
@@ -69,21 +74,21 @@ public class ProductViewItemAdapter extends RecyclerView.Adapter<ProductViewItem
             @Override
             public void onClick(View view) {
 
-//                Intent detailActivityIntent = new Intent(context, PreviewActivity.class);
-//                ActivityOptionsCompat optionCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,itemView.findViewById(R.id.product_img),"productImage");
-//
-//                Bundle data = new Bundle();
-//                data.putString("name",itemList.get(position).getProductName());
-//                data.putString("price",itemList.get(position).getPrice());
-//                data.putString("old price",itemList.get(position).getOldPrice());
-//                data.putInt("imageID",itemList.get(position).getImageID());
-//                detailActivityIntent.putExtras(data);
-//                context.startActivity(detailActivityIntent,optionCompat.toBundle());
+                Intent detailActivityIntent = new Intent(context, PreviewActivity.class);
+                ActivityOptionsCompat optionCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,itemView.findViewById(R.id.product_img),"productImage");
 
-                Product p=itemList.get(position);
-                itemList.add(position,p);
-                notifyItemInserted(position);
-                notifyItemRangeChanged(position,itemList.size());
+                Bundle data = new Bundle();
+                data.putString("name",itemList.get(position).getProductName());
+                data.putString("price",itemList.get(position).getPrice());
+                data.putString("old price",itemList.get(position).getOldPrice());
+                data.putInt("imageID",itemList.get(position).getImageID());
+                detailActivityIntent.putExtras(data);
+                context.startActivity(detailActivityIntent,optionCompat.toBundle());
+
+//                Product p=itemList.get(position);
+//                itemList.add(position,p);
+//                notifyItemInserted(position);
+//                notifyItemRangeChanged(position,itemList.size());
             }
         });
 
