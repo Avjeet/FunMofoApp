@@ -42,6 +42,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"
                 android:text="Categories"
                 android:padding="5dp"
                 android:textSize="16sp"
@@ -73,9 +75,11 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_height="wrap_content">
+
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="15dp"
+                    android:padding="5dp"
                     android:background="@color/white"
                     android:layout_height="wrap_content">
                     <RelativeLayout
@@ -88,8 +92,11 @@
                             android:id="@+id/menimage"
                             android:src="@drawable/menimage"/>
                         <TextView
+                            android:textColor="@color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:padding="7dp"
                             android:textSize="15dp"
                             android:layout_below="@+id/menimage"
                             android:text="Men's Product"/>
@@ -110,11 +117,14 @@
                             android:id="@+id/womenimage"
                             android:src="@drawable/women2"/>
                         <TextView
+                            android:textColor="@color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="15dp"
+                            android:padding="7dp"
+                            android:layout_marginLeft="20dp"
                             android:layout_below="@+id/womenimage"
-                            android:text="Men's Product"/>
+                            android:text="Women's Product"/>
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -125,6 +135,8 @@
 
 
             <TextView
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/recently_viewed"
@@ -150,6 +162,8 @@
                 android:background="@color/grey_vlight"/>
 
             <TextView
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/top_products"
