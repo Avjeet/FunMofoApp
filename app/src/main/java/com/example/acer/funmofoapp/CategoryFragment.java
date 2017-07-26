@@ -61,7 +61,8 @@ public class CategoryFragment extends Fragment {
         adapter1=new WishlistViewItemAdapter(list,"category");
         rv1.setAdapter(adapter1);
         rv1.setLayoutManager(new GridLayoutManager(getActivity(),3));
-//
+
+
 
         list2=new ArrayList<>();
         list2.add(new CartProduct(R.drawable.spic1,
@@ -70,17 +71,10 @@ public class CategoryFragment extends Fragment {
                 "Stayfree","Rs. 80"));
         list2.add(new CartProduct(R.drawable.spic3,
                 "Hello Kity","Rs. 90"));
-        list2.add(new CartProduct(R.drawable.spic4,
-                "Slimguard","Rs. 90"));
-        list2.add(new CartProduct(R.drawable.spic5,
-                "Whisper","Rs. 70"));
-        list2.add(new CartProduct(R.drawable.spic6,
-                "Sofy","Rs. 90"));
-
-
         adapter2=new WishlistViewItemAdapter(list2,"category2");
         rv2.setAdapter(adapter2);
         rv2.setLayoutManager(new GridLayoutManager(getActivity(),3));
+
 
 
         list3=new ArrayList<>();
@@ -90,14 +84,6 @@ public class CategoryFragment extends Fragment {
                 "Purell","Rs. 80"));
         list3.add(new CartProduct(R.drawable.apic3,
                 "Cleanup","Rs. 90"));
-        list3.add(new CartProduct(R.drawable.apic4,
-                "Cleanwell","Rs. 90"));
-        list3.add(new CartProduct(R.drawable.apic5,
-                "Avant","Rs. 70"));
-        list3.add(new CartProduct(R.drawable.apic6,
-                "Scrubs","Rs. 90"));
-
-
         adapter3=new WishlistViewItemAdapter(list3,"category3");
         rv3.setAdapter(adapter3);
         rv3.setLayoutManager(new GridLayoutManager(getActivity(),3));
