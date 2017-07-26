@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
 
-        } else if(id == R.id.orders){
+        } else if(id == R.id.rl_orders){
             Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
 //            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);

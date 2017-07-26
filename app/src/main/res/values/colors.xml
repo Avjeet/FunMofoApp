@@ -22,4 +22,6 @@
     <color name="vlight_green">#e4f5e0</color>
     <color name="orange_vlight">#fff4d5</color>
     <color name="light_grey">#f4f4f4</color>
+    <color name="offwhite">#eaeaea</color>
+    <color name="vdarkblue">#1d205c</color>
 </resources>
