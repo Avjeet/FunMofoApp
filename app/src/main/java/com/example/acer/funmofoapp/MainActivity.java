@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     private CountDownTimer timer;
 
     private TextView notifyTextBadge;
+    private RelativeLayout rlorder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity
         tvtitle=(TextView)findViewById(R.id.tv_title);
 
         notifyTextBadge=(TextView) findViewById(R.id.notify_no);
+        rlorder=(RelativeLayout)findViewById(R.id.relative_order);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -80,7 +83,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
+//        rlorder.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
+//                startActivity(i1);
+//            }
+//        });
 
 
         timer= new CountDownTimer(total_time,time_tick) {
@@ -233,9 +242,11 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
 
-
+        }  else if(id == R.id.rl_orders){
+            Log.i("Myapp", "Nav order ");
+            Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
+            startActivity(i1);
         }
-
         else if (id == R.id.wishlist2) {
             tvtitle.setText("Wishlist");
             trans.replace(R.id.fragment,new WishlistFillFragment());

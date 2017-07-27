@@ -41,11 +41,11 @@
         <item name="android:background">@drawable/textbox_boundary</item>
     </style>
 
-    <style name="myswitch">
-        <item name="android:colorControlActivated">@color/cyan</item>
-        <item name="colorSwitchThumbNormal">@color/grey_dark</item>
-        <item name="android:colorForeground">@color/grey_dark</item>
-    </style>
+    <!--<style name="myswitch">-->
+        <!--<item name="android:colorControlActivated">@color/cyan</item>-->
+        <!--<item name="colorSwitchThumbNormal">@color/grey_dark</item>-->
+        <!--<item name="android:colorForeground">@color/grey_dark</item>-->
+    <!--</style>-->
 
     <style name="ibstyle">
         <item name="android:background">@drawable/circular</item>
