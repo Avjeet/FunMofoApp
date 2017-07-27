@@ -20,7 +20,6 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -198,18 +197,16 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
          if (id == R.id.cart) {
              tvtitle.setText("Cart");
-
-              trans.replace(R.id.fragment,new CartFillFragment());
+             trans.replace(R.id.fragment,new CartFillFragment());
              trans.addToBackStack(null);
-              trans.commit();
+             trans.commit();
         }
         else
             if(id==R.id.wishlist)
-            {
-                tvtitle.setText("Wishlist");
-              trans.replace(R.id.fragment,new WishlistFillFragment());
+            {   tvtitle.setText("Wishlist");
+                trans.replace(R.id.fragment,new WishlistFillFragment());
                 trans.addToBackStack(null);
-              trans.commit();
+                trans.commit();
             }
 
 
@@ -226,14 +223,22 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.home) {
             tvtitle.setText(" ");
-           trans.replace(R.id.fragment,new HomeFragment());
+            trans.replace(R.id.fragment,new HomeFragment());
             trans.commit();
 
         } else if (id == R.id.about) {
 
-        } else if (id == R.id.top) {
+        }
+        else if (id == R.id.category) {
+            tvtitle.setText("All Categories");
+            trans.replace(R.id.fragment,new CategoryFragment());
+            trans.addToBackStack(null);
+            trans.commit();
+
+        }else if (id == R.id.top) {
             tvtitle.setText("Top Products");
             trans.replace(R.id.fragment,new TopFragment());
+            trans.addToBackStack(null);
             trans.commit();
 
 
@@ -248,12 +253,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.cart2) {
 
             tvtitle.setText("Cart");
-
             trans.replace(R.id.fragment,new CartFillFragment());
             trans.addToBackStack(null);
             trans.commit();
 
-        } else if(id == R.id.orders){
+        } else if(id == R.id.rl_orders){
             Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
 //            i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);

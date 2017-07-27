@@ -31,6 +31,12 @@
         <item name="colorControlNormal">@color/black</item>
     </style>
 
+    <style name="imagestyle">
+        <item name="android:background">@drawable/circular_button</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <!--<style name="DialogAnimation" >
         <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
         <item name="android:windowExitAnimation">@anim/slide_out_down</item>
@@ -51,7 +57,10 @@
 
     </style>
 
+     <style name="ibstyle2">
+         <item name="android:background">@drawable/circular2</item>
 
+     </style>
 
 
 

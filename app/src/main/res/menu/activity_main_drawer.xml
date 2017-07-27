@@ -6,6 +6,11 @@
             android:id="@+id/home"
             android:icon="@drawable/ic_home"
             android:title="Home" />
+        <item
+            android:id="@+id/category"
+            android:icon="@drawable/ic_category"
+            android:title="Categories" />
+
 
         <item
             android:id="@+id/top"
@@ -27,10 +32,6 @@
             android:icon="@drawable/ic_cart2"
             android:title="My Cart" />
 
-        <item
-            android:id="@+id/orders"
-            android:icon="@drawable/ic_orders"
-            android:title="My Orders" />
 
         <item
             android:id="@+id/about"

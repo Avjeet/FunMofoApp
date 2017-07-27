@@ -10,18 +10,18 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 
 import com.example.acer.funmofoapp.Adapters.BannerViewPagerAdapter;
+import com.example.acer.funmofoapp.Adapters.CategoryAdapter;
 import com.example.acer.funmofoapp.Adapters.ProductViewItemAdapter;
+import com.example.acer.funmofoapp.Data.Category;
 import com.example.acer.funmofoapp.Data.Product;
-import com.github.clans.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -35,20 +35,17 @@ public class HomeFragment extends Fragment {
     private TabLayout dotTabLayout;
     private ArrayList<Integer> bannerImagesID;
     private int currentPos = 1;
-
     private CountDownTimer timer;
-
-    private RelativeLayout rlMore;
-
-
-
     private RecyclerView recentlyViewRecycler;
     private ProductViewItemAdapter productItemAdapter;
     private ArrayList<Product> productList;
+    private ImageView ivCategory;
 
     private ArrayList<Product> topProductsList;
+    private ArrayList<Category>categoriesList;
     private ProductViewItemAdapter topProductItemAdapter;
-    private RecyclerView topProductRecycler;
+    private CategoryAdapter categoryAdapter;
+    private RecyclerView topProductRecycler,categoryRecycler;
 
 
 
@@ -63,19 +60,20 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        rlMore= (RelativeLayout) view.findViewById(R.id.rlMore);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         dotTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+        ivCategory= (ImageView) view.findViewById(R.id.allcategories);
         recentlyViewRecycler = (RecyclerView) view.findViewById(R.id.recently_view_recycler);
         topProductRecycler=(RecyclerView) view.findViewById(R.id.top_product_recycler);
+        categoryRecycler= (RecyclerView) view.findViewById(R.id.categories);
 
-        rlMore.setOnClickListener(new View.OnClickListener() {
+        ivCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 FragmentManager mgr=getActivity().getSupportFragmentManager();
                 FragmentTransaction trans=mgr.beginTransaction();
-                trans.replace(R.id.fragment,new TopFragment());
+                trans.replace(R.id.fragment,new CategoryFragment());
                 trans.commit();
             }
         });
@@ -172,6 +170,19 @@ public class HomeFragment extends Fragment {
         viewPager.setCurrentItem(1);
         timer.start();
 
+        // categories view list item
+
+        categoriesList=new ArrayList<>();
+        categoriesList.add(new Category(R.drawable.main1,"Condoms"));
+        categoriesList.add(new Category(R.drawable.main2,"Sanitary Pads"));
+        categoriesList.add(new Category(R.drawable.main3,"Sanitizers"));
+        categoryAdapter=new CategoryAdapter(categoriesList);
+
+        LinearLayoutManager horizontal3LayoutManager =new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        categoryRecycler.setLayoutManager(horizontal3LayoutManager);
+        categoryRecycler.setItemAnimator(new DefaultItemAnimator());
+        categoryRecycler.setAdapter(categoryAdapter);
+
 
 
 
@@ -194,19 +205,20 @@ public class HomeFragment extends Fragment {
         //top products list item
 
         topProductsList= new ArrayList<>();
-        topProductsList.add(new Product(R.drawable.pic3, "Durex Condoms", "₹130","₹150"));
-        topProductsList.add(new Product(R.drawable.pic7, "Ansell Lifestyles", "₹120","₹130"));
         topProductsList.add(new Product(R.drawable.pic5, "Skore Condoms", "₹210",""));
         topProductsList.add(new Product(R.drawable.pic6, "Skins Condoms", "₹100",""));
         topProductsList.add(new Product(R.drawable.pic9, "Durex Condoms", "₹130","₹150"));
         topProductsList.add(new Product(R.drawable.pic4, "Ansell Lifestyles", "₹120","₹130"));
+        topProductsList.add(new Product(R.drawable.pic3, "Durex Condoms", "₹130","₹150"));
+        topProductsList.add(new Product(R.drawable.pic7, "Ansell Lifestyles", "₹120","₹130"));
+
 
         topProductItemAdapter = new ProductViewItemAdapter(topProductsList,"top");
 
-        GridLayoutManager gridLayoutManagerManager = new GridLayoutManager(getActivity(),2);
+       // GridLayoutManager gridLayoutManagerManager = new GridLayoutManager(getActivity(),2);
+        LinearLayoutManager horizontalLayoutManager2= new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
         topProductRecycler.setItemAnimator(new DefaultItemAnimator());
-        topProductRecycler.setLayoutManager(gridLayoutManagerManager);
-
+        topProductRecycler.setLayoutManager(horizontalLayoutManager2);
         topProductRecycler.setAdapter(topProductItemAdapter);
 
 

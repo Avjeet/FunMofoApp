@@ -1,6 +1,5 @@
 package com.example.acer.funmofoapp.Adapters;
 
-import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +24,7 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
 
     private String tag;
     private View myview;
-    static int count=1;
+    int count=0;
 
     public List<CartProduct> list;
     public Context context;
@@ -38,7 +38,8 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
     public class ItemViewHolder extends RecyclerView.ViewHolder{
 
         public ImageView ivPic,ivshare,ivdelete,imclose ,imPlus,imMinus;
-        public TextView name,price,count;
+        public TextView name,price;
+        public EditText etcount;
         private CardView card_view;
 
         public ItemViewHolder( final View itemView) {
@@ -52,7 +53,11 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             card_view= (CardView) itemView.findViewById(R.id.card_view);
             imPlus=(ImageView)itemView.findViewById(R.id.imPlus);
             imMinus=(ImageView)itemView.findViewById(R.id.imMinus);
-            count=(TextView)itemView.findViewById(R.id.tv_count);
+            etcount=(EditText) itemView.findViewById(R.id.tv_count);
+
+
+
+
         }
     }
 
@@ -65,6 +70,8 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
             myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.wishlist_item,parent,false);
         else if(tag=="cart")
             myview= LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item,parent,false);
+        else
+            myview=LayoutInflater.from(parent.getContext()).inflate(R.layout.category_item_card,parent,false);
 
 
         return new ItemViewHolder(myview);
@@ -116,24 +123,31 @@ public class WishlistViewItemAdapter extends RecyclerView.Adapter<WishlistViewIt
                     }
                 });
 
+                holder.etcount.setEnabled(false);
+
                 holder.imPlus.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
-                       // count=count+1;
-                        //holder.count.setText(count);
-
-
+                    public void onClick(View view) {
+                        count=Integer.parseInt((holder.etcount.getText()).toString());
+                        holder.etcount.setText(String.valueOf(count+1));
                     }
                 });
 
                 holder.imMinus.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
-                        count=count-1;
-                        holder.count.setText(count);
+                    public void onClick(View view) {
+                        count=Integer.parseInt((holder.etcount.getText()).toString());
+                        holder.etcount.setText(String.valueOf(count-1));
                     }
                 });
                 break;
+                default:
+                holder.ivPic.setImageResource(list.get(position).getImageID());
+                holder.name.setText(list.get(position).getProductName());
+                holder.price.setText(list.get(position).getPrice());
+                break;
+
+
         }
 
             holder.card_view.setOnClickListener(new View.OnClickListener() {
