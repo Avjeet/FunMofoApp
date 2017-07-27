@@ -31,10 +31,10 @@
              android:textSize="19dp"/>
          <android.support.v7.widget.RecyclerView
              android:layout_width="match_parent"
-             android:layout_marginTop="10dp"
+             android:layout_marginTop="3dp"
              android:id="@+id/rll1"
              android:layout_gravity="center"
-             android:background="@color/white"
+             android:background="@color/Background"
              android:layout_height="wrap_content">
 
          </android.support.v7.widget.RecyclerView>
@@ -47,15 +47,16 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="Sanitary Pads"
+             android:layout_marginTop="20dp"
              android:textColor="@color/black"
              android:textSize="19dp"
              android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
          <android.support.v7.widget.RecyclerView
              android:layout_width="match_parent"
-             android:layout_marginTop="10dp"
+             android:layout_marginTop="3dp"
              android:id="@+id/rll2"
              android:layout_gravity="center"
-             android:background="@color/white"
+             android:background="@color/Background"
              android:layout_height="wrap_content">
 
          </android.support.v7.widget.RecyclerView>
@@ -68,15 +69,16 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="Sanitizers"
+             android:layout_marginTop="20dp"
              android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
              android:textColor="@color/black"
              android:textSize="19dp"/>
          <android.support.v7.widget.RecyclerView
              android:layout_width="match_parent"
-             android:layout_marginTop="10dp"
+             android:layout_marginTop="3dp"
              android:id="@+id/rll3"
              android:layout_gravity="center"
-             android:background="@color/white"
+             android:background="@color/Background"
              android:layout_height="wrap_content">
 
          </android.support.v7.widget.RecyclerView>
