@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity
         tvtitle=(TextView)findViewById(R.id.tv_title);
 
         notifyTextBadge=(TextView) findViewById(R.id.notify_no);
-        rlorder=(RelativeLayout)findViewById(R.id.relative_order);
+//        rlorder=(RelativeLayout)findViewById(R.id.relative_order);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View headerView = navigationView.getHeaderView(0);
+        rlorder=(RelativeLayout) headerView.findViewById(R.id.relative_order);
+
+
         mgr=getSupportFragmentManager();
         trans=mgr.beginTransaction();
         trans.replace(R.id.fragment,new HomeFragment());
@@ -83,13 +87,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-//        rlorder.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
-//                startActivity(i1);
-//            }
-//        });
+        rlorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
+                startActivity(i1);
+            }
+        });
 
 
         timer= new CountDownTimer(total_time,time_tick) {
@@ -249,10 +253,6 @@ public class MainActivity extends AppCompatActivity
             trans.addToBackStack(null);
             trans.commit();
 
-        }  else if(id == R.id.rl_orders){
-            Log.i("Myapp", "Nav order ");
-            Intent i1=new Intent(MainActivity.this,MyOrderActivity.class);
-            startActivity(i1);
         }
         else if (id == R.id.wishlist2) {
             tvtitle.setText("Wishlist");
