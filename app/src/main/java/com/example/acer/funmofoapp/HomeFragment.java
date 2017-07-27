@@ -176,7 +176,7 @@ public class HomeFragment extends Fragment {
         categoriesList.add(new Category(R.drawable.main1,"Condoms"));
         categoriesList.add(new Category(R.drawable.main2,"Sanitary Pads"));
         categoriesList.add(new Category(R.drawable.main3,"Sanitizers"));
-        categoryAdapter=new CategoryAdapter(categoriesList);
+        categoryAdapter=new CategoryAdapter(categoriesList,"categories");
 
         LinearLayoutManager horizontal3LayoutManager =new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
         categoryRecycler.setLayoutManager(horizontal3LayoutManager);

@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.acer.funmofoapp.Adapters.WishlistViewItemAdapter;
-import com.example.acer.funmofoapp.Data.CartProduct;
+import com.example.acer.funmofoapp.Adapters.CategoryAdapter;
+import com.example.acer.funmofoapp.Data.Category;
 
 import java.util.ArrayList;
 
@@ -20,8 +20,8 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class CategoryFragment extends Fragment {
-    private ArrayList<CartProduct> list, list2, list3;
-    private WishlistViewItemAdapter adapter1, adapter2, adapter3;
+    private ArrayList<Category> list, list2, list3;
+    private CategoryAdapter adapter1, adapter2, adapter3;
     private RecyclerView rv1, rv2, rv3;
 
 
@@ -44,47 +44,47 @@ public class CategoryFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         list=new ArrayList<>();
-        list.add(new CartProduct(R.drawable.pic1,
-                "Durex","Rs. 60"));
-        list.add(new CartProduct(R.drawable.pic10,
-                "Skore","Rs. 80"));
-        list.add(new CartProduct(R.drawable.pic2,
-                "Manforce","Rs. 90"));
-        list.add(new CartProduct(R.drawable.pic4,
-                "Assorted","Rs. 90"));
-        list.add(new CartProduct(R.drawable.pic6,
-                "Manforce","Rs. 70"));
-        list.add(new CartProduct(R.drawable.pic7,
-                "Skins","Rs. 90"));
+        list.add(new Category(R.drawable.pic1,
+                "Durex"));
+        list.add(new Category(R.drawable.pic10,
+                "Skore"));
+        list.add(new Category(R.drawable.pic2,
+                "Manforce"));
+        list.add(new Category(R.drawable.pic4,
+                "Assorted"));
+        list.add(new Category(R.drawable.pic6,
+                "Manforce"));
+        list.add(new Category(R.drawable.pic7,
+                "Skins"));
 
 
-        adapter1=new WishlistViewItemAdapter(list,"category");
+        adapter1=new CategoryAdapter(list,"category");
         rv1.setAdapter(adapter1);
         rv1.setLayoutManager(new GridLayoutManager(getActivity(),3));
 
 
 
         list2=new ArrayList<>();
-        list2.add(new CartProduct(R.drawable.spic1,
-                "Petals","Rs. 60"));
-        list2.add(new CartProduct(R.drawable.spic2,
-                "Stayfree","Rs. 80"));
-        list2.add(new CartProduct(R.drawable.spic3,
-                "Hello Kity","Rs. 90"));
-        adapter2=new WishlistViewItemAdapter(list2,"category2");
+        list2.add(new Category(R.drawable.spic1,
+                "Petals"));
+        list2.add(new Category(R.drawable.spic2,
+                "Stayfree"));
+        list2.add(new Category(R.drawable.spic3,
+                "Hello Kity"));
+        adapter2=new CategoryAdapter(list2,"category2");
         rv2.setAdapter(adapter2);
         rv2.setLayoutManager(new GridLayoutManager(getActivity(),3));
 
 
 
         list3=new ArrayList<>();
-        list3.add(new CartProduct(R.drawable.apic1,
-                "Lifeboy","Rs. 60"));
-        list3.add(new CartProduct(R.drawable.apic2,
-                "Purell","Rs. 80"));
-        list3.add(new CartProduct(R.drawable.apic3,
-                "Cleanup","Rs. 90"));
-        adapter3=new WishlistViewItemAdapter(list3,"category3");
+        list3.add(new Category(R.drawable.apic1,
+                "Lifeboy"));
+        list3.add(new Category(R.drawable.apic2,
+                "Purell"));
+        list3.add(new Category(R.drawable.apic3,
+                "Cleanup"));
+        adapter3=new CategoryAdapter(list3,"category3");
         rv3.setAdapter(adapter3);
         rv3.setLayoutManager(new GridLayoutManager(getActivity(),3));
 
