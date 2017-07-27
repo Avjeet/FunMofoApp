@@ -19,10 +19,12 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
 
     public List<Category> itemList;
+    private String tag;
     private View itemView;
 
-    public CategoryAdapter(List<Category> itemList) {
+    public CategoryAdapter(List<Category> itemList, String tag) {
         this.itemList = itemList;
+        this.tag=tag;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
