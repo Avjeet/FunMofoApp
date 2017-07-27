@@ -7,11 +7,12 @@
     android:padding="5dp"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:layout_margin="1dp">
+    android:layout_margin=".7dp">
 
     <ImageView
         android:transitionName="productImage"
         android:id="@+id/category_image"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:src="@drawable/pic4"/>

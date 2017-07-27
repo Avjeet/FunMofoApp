@@ -79,6 +79,7 @@
              android:id="@+id/rll3"
              android:layout_gravity="center"
              android:background="@color/Background"
+             android:layout_marginBottom="40dp"
              android:layout_height="wrap_content">
 
          </android.support.v7.widget.RecyclerView>
