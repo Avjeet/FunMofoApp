@@ -40,14 +40,27 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public CategoryAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if(tag=="categories")
         itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.category_card,parent,false);
+        else
+            itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.top_product_list_item,parent,false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.image.setImageResource(itemList.get(position).getImage());
-        holder.categoryname.setText(itemList.get(position).getName());
+        switch (tag)
+        {
+            case "categories":
+                holder.image.setImageResource(itemList.get(position).getImage());
+                holder.categoryname.setText(itemList.get(position).getName());
+                break;
+            default:
+                holder.image.setImageResource(itemList.get(position).getImage());
+                holder.categoryname.setText(itemList.get(position).getName());
+                break;
+        }
+
 
     }
 

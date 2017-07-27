@@ -48,14 +48,14 @@ public class CategoryFragment extends Fragment {
                 "Durex"));
         list.add(new Category(R.drawable.pic10,
                 "Skore"));
-        list.add(new Category(R.drawable.pic2,
-                "Manforce"));
+        list.add(new Category(R.drawable.pic9,
+                "Pasante"));
         list.add(new Category(R.drawable.pic4,
-                "Assorted"));
+                "Assort"));
         list.add(new Category(R.drawable.pic6,
-                "Manforce"));
-        list.add(new Category(R.drawable.pic7,
                 "Skins"));
+        list.add(new Category(R.drawable.pic9,
+                "Pasante"));
 
 
         adapter1=new CategoryAdapter(list,"category");
@@ -70,7 +70,7 @@ public class CategoryFragment extends Fragment {
         list2.add(new Category(R.drawable.spic2,
                 "Stayfree"));
         list2.add(new Category(R.drawable.spic3,
-                "Hello Kity"));
+                "Kity"));
         adapter2=new CategoryAdapter(list2,"category2");
         rv2.setAdapter(adapter2);
         rv2.setLayoutManager(new GridLayoutManager(getActivity(),3));
