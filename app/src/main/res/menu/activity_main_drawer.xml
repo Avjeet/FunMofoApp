@@ -16,12 +16,7 @@
             android:id="@+id/top"
             android:icon="@drawable/ic_top"
             android:title="Top Products" />
-        <!--
-        <item
-            android:id="@+id/New"
-            android:icon="@drawable/ic_new"
-            android:title="New Collections" />
-            -->
+
 
         <item
             android:id="@+id/wishlist2"
@@ -44,25 +39,50 @@
             android:title="Contact us" />
 
 
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/account"
+            android:icon="@drawable/ic_account"
+            android:title="My Account" />
+
+        <item
+            android:id="@+id/password"
+            android:icon="@drawable/ic_password"
+            android:title="Change Password" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Log out" />
+
+
     </group>
 
-    <item android:title="Settings">
+    <!--<item android:title=" ">-->
 
-        <menu>
-            <item
-                android:id="@+id/account"
-                android:icon="@drawable/ic_account"
-                android:title="My Account" />
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/settings"-->
+                <!--android:icon="@drawable/ic_settings"-->
+                <!--android:title="Settings" />-->
 
-            <item
-                android:id="@+id/password"
-                android:icon="@drawable/ic_password"
-                android:title="Change Password" />
-            <item
-                android:id="@+id/logout"
-                android:icon="@drawable/ic_logout"
-                android:title="Log out" />
-        </menu>
-    </item>
+            <!--<item-->
+                <!--android:id="@+id/account"-->
+                <!--android:icon="@drawable/ic_account"-->
+                <!--android:title="My Account" />-->
+
+            <!--<item-->
+                <!--android:id="@+id/password"-->
+                <!--android:icon="@drawable/ic_password"-->
+                <!--android:title="Change Password" />-->
+            <!--<item-->
+                <!--android:id="@+id/logout"-->
+                <!--android:icon="@drawable/ic_logout"-->
+                <!--android:title="Log out" />-->
+        <!--</menu>-->
+    <!--</item>-->
 
 </menu>

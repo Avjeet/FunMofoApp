@@ -16,4 +16,9 @@
         <item name="colorAccent">#5962ca</item>
         <item name="android:windowActivityTransitions">true</item>
     </style>
+
+    <style name="myswitch">
+        <item name="android:colorControlActivated">@color/cyan</item>
+    </style>
+
 </resources>
